@@ -59,7 +59,6 @@ export default class CustomerLogin extends Component {
              
              <button type="submit">Login</button>
           </form>
-          <li><a href='/customer/signup'></a></li>
       </div>
     )
   }
