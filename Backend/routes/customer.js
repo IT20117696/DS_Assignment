@@ -4,7 +4,6 @@ let customer = require("../models/customer");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const customerauth = require("../middleware/customerauth");
 
 //customer signup
 router.post("/customer/signup", async (req, res) => {
@@ -39,6 +38,20 @@ router.post("/customer/signup", async (req, res) => {
       } catch (error) {
          console.log(error.message);
          res.status(500).send({error: error.message});
+    }
+  });
+
+  //customer login
+  router.post('/customer/signin', async (req, res) => {
+    try {
+      const {email, pwd} = req.body
+      const Customer = await customer.findByCredentials(email, pwd)
+      const token = await Customer.generateAuthToken()
+      res.status(200).send({token: token, Customer: Customer})
+  
+    } catch (error) {
+      res.status(500).send({ error: error.message });
+      console.log(error);
     }
   });
 
