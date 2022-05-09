@@ -17,5 +17,19 @@ router.route('/movie/add').post((req,res)=>{
     });
 });
 
+//display movie details 
+router.route('/movie/display').get((req,res)=>{
+    movie.find().exec((err,movie)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:true,
+            existingMovie : movie
+        });
+    });
+});
 
 module.exports = router;
