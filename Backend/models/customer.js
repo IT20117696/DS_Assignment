@@ -25,7 +25,7 @@ const customerSchema = new mongoose.Schema({
         trim: true,
         validate(value) {
           if (!validator.isEmail(value)) {
-            throw new Error("Please enter valid email address");
+            throw new Error("Please enter valid Email address");
           }
         },
     },
