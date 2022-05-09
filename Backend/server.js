@@ -29,10 +29,11 @@ console.log("Mongodb connection success!!!");
 
 //import routes
 const customerRouter = require("./routes/customer");
-
+const movieRouter = require("./routes/movie");
 
 //use routes
 app.use('/api',customerRouter);
+app.use('/api',movieRouter);
 
 app.listen(PORT,()=>{
     console.log(`App is running on on port number: ${PORT}`)
