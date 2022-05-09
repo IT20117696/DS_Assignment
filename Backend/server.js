@@ -7,7 +7,7 @@ require("dotenv").config();
 app.use(express.json());
 
 
-const PORT = process.env.PORT || 8071;
+const PORT = process.env.PORT || 8070;
 
 app.use(cors());
 
