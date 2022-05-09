@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "frontend": "npm start --prefix ../Frontend",
+    "frontend": "npm start --prefix ../frontend",
     "start": "nodemon server.js",
-    "dev": "concurrently \"npm run start\" \"npm run Frontend\""
+    "dev": "concurrently \"npm run start\" \"npm run frontend\""
   },
   "author": "",
   "license": "ISC",
