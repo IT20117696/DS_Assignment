@@ -1,4 +1,7 @@
 const mongoose = require ('mongoose');
+const validator = require("validator");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const customerSchema = new mongoose.Schema({
     
@@ -10,13 +13,6 @@ const customerSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true,
-        maxlength: 13,
-        trim: true,
-        validate(value) {
-          if (!validator.isMobilePhone(value)) {
-            throw new Error("Please enter valid mobile number");
-          }
-        },
       },
     email: {
         type: String,
@@ -43,8 +39,8 @@ const customerSchema = new mongoose.Schema({
             required: true,
         },
         },
-    ],
-});
+    ],   
+},  {timestamps:true});
 
 // @Action - encrypt the password
 customerSchema.pre('save', async function(next){
