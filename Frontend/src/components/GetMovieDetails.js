@@ -49,8 +49,7 @@ retrieveMovie(){
               {this.state.movie.map((movie,index)=>(
                       <tr>
                           <th scope='row'>{index + 1}</th>
-                          <td><a href={`/moviedetails/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
-                          {/* <td>{movie.movieName}</td> */}
+                          <td><a href={`/specificmovie/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
                           <td>{movie.timeSlot}</td>
                           <td>{movie.description}</td>
                           <td>{movie.cast}</td>
