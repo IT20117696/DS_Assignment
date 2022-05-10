@@ -21,7 +21,7 @@ export default class CustomerLogin extends Component {
           pwd:this.state.pwd
       }
 
-    await axios.post("http://localhost:8070/api/customer/signin",userData)
+    await axios.post("localhost:8070/api/customer/signin",userData)
        .then((res)=>{
            this.setState({
                token:res.data.token
@@ -57,8 +57,18 @@ export default class CustomerLogin extends Component {
               <input type="password" name='password' placeholder='Enter password here'
                  onChange={e=>this.setState({pwd:e.target.value})} required/>
              
-             <button type="submit">Login</button>
-          </form>
+            
+             <div class="d-flex justify-content-end pt-3">
+            <button type="submit" class="btn btn-warning btn-lg ms-2">
+                Login
+            </button>
+            </div>
+          
+            <label class="label">Already Registered ?</label>
+            <li class="signin-active">
+            <a href='/customer/signup' class="btn">Sign In</a></li>
+    
+      </form>
       </div>
     )
   }

@@ -18,7 +18,7 @@ export default function CustomerRegisteration(){
             pwd : pwd1
         }
         if(pwd1 == pwd2){
-            axios.post("http://localhost:8070/api/customer/signup",new_customer )
+            axios.post("localhost:8070/api/customer/signup",new_customer )
             .then(()=>{
                 alert("Registeration Success!!");
             }).catch((err)=>{
@@ -87,7 +87,7 @@ export default function CustomerRegisteration(){
 
             <label class="label">Already Registered ?</label>
             <li class="signin-active">
-            <a href='/customer/signin' class="btn">Sign In</a></li>
+            <a href='/' class="btn">Sign In</a></li>
       </form>
     )
 }
