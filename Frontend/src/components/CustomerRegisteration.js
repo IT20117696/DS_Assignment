@@ -36,58 +36,44 @@ export default function CustomerRegisteration(){
 
     return (
       <form action='' method="post" name="form" onSubmit={sendData}>
-            
-            <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example8">Customer Name</label>
-            <input type="text"  id="form3Example8" 
-                   class="form-control form-control-lg" 
-                   onChange={(e) => setcustomerName(e.target.value)} required/>
-            </div>
-
-            <div class="form-outline mb-4">
+                   
+            <label class="form-label">Customer Name</label>
+            <input type="text"   
+                   onChange={(e) => setcustomerName(e.target.value)} required/><br/>
+        
             <label class="form-label" for="form3Example9">Phone Number</label>
             <input type="text" id="form3Example9"
-                   class="form-control form-control-lg" 
                    onChange={(e) => setphone(e.target.value)}
-                   pattern="[0-9]{10}" required />
-            </div>
-
-            <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example8">Email Address</label>
-            <input type="email" id="form3Example8" 
-                    class="form-control form-control-lg"
+                   pattern="[0-9]{10}" required /><br/>
+      
+     
+            <label class="form-label">Email Address</label>
+            <input type="email"  
                     pattern="(?![.-])((?![.-][.-])[a-zA-Z\d.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}"
                     inputMode="email"
-                    onChange={(e) => setemail(e.target.value)} required/>
-            </div>
+                    onChange={(e) => setemail(e.target.value)} required/><br/>
+          
 
-            <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example97">Password</label>
-            <input type="password"  id="form3Example97" 
-                   class="form-control form-control-lg" 
+     
+            <label class="form-label">Password</label>
+            <input type="password" 
                    data-toggle="tooltip" 
                    data-placement="center" 
                    title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
-                   onChange={(e) => setPassowrd1(e.target.value)} required/>
-            </div>
-
-            <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example97">Repeat Password</label>
-            <input type="password"  id="form3Example97" 
-                   class="form-control form-control-lg"  
+                   onChange={(e) => setPassowrd1(e.target.value)} required/><br/>
+          
+            <label class="form-label">Repeat Password</label>
+            <input type="password" 
                    title="Your password MUST contain at least 8 charactors, including UPPER-lowercase letters and at least one number and a charactor = 'Sample@523'"
-                   onChange={(e) => setPassowrd2(e.target.value)}/>
-            </div>
-
-            <div class="d-flex justify-content-end pt-3">
-            <button type="submit" class="btn btn-warning btn-lg ms-2">
+                   onChange={(e) => setPassowrd2(e.target.value)}/><br/>
+                  
+            <button type="submit">
                 Submit
             </button>
-            </div>
-
-            <label class="label">Already Registered ?</label>
-            <li class="signin-active">
-            <a href='/' class="btn">Sign In</a></li>
+            <br/>
+            <label >Not Registered? </label>
+            <a href="/" >Sign In</a>
+       
       </form>
     )
 }

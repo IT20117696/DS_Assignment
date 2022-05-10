@@ -58,16 +58,13 @@ export default class CustomerLogin extends Component {
                  onChange={e=>this.setState({pwd:e.target.value})} required/>
              
             
-             <div class="d-flex justify-content-end pt-3">
-            <button type="submit" class="btn btn-warning btn-lg ms-2">
-                Login
-            </button>
-            </div>
-          
+<br/>
+            <button type="submit">Login</button>
+          <br/>
             <label class="label">Already Registered ?</label>
-            <li class="signin-active">
-            <a href='/customer/signup' class="btn">Sign In</a></li>
+            <a href='/customer/signup'>Sign Up</a>
     
+
       </form>
       </div>
     )
