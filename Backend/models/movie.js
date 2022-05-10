@@ -19,7 +19,7 @@ const movieSchema = new mongoose.Schema({
 
     banner:{
         type:String,
-        required:true,
+        required:false,
     },
 
     cast:{
