@@ -19,8 +19,8 @@ function App(){
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
                 <Route path = "/movie/add" component={AddMovie}/>      
                 <Route path = "/movie/display" component={GetMovieDetails}/>
-                <Route path = "/specificmovie/:id" component={SpecificMovie}/>
-                <Route path = "/movie/edit/:id" component={EditMovie}/>
+                <Route path = "/specific/:movieID" component={SpecificMovie}/>
+                <Route path = "/update/:movieID" component={EditMovie}/>
            
                 </div> 
             </Switch>

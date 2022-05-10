@@ -17,6 +17,7 @@ export default class GetMovieDetails extends Component {
 //     // window.location.href = `/movieadd`
 // }
 
+//retrieve all movie details
 componentDidMount(){
     this.retrieveMovie();
 }    
@@ -31,6 +32,17 @@ retrieveMovie(){
         }
     })
 }
+
+//delete movie details
+onDelete = (movieID)=>{
+  if (window.confirm('Are you sure you wish to delete this item?')) {
+    axios.delete(`http://localhost:8070/api/delete/${movieID}`).then((res)=>{
+      alert("Delete Successfully!!");
+      this.retrieveMovie();
+    })
+  }}
+  
+
   render() {
     return (
       <div className='container'>
@@ -38,7 +50,7 @@ retrieveMovie(){
           <div align="right">
           <br/>
           <IconButton aria-label="delete" size="small"
-                      style={{background: "#800000"}} href={`/movie/add`}>
+                      style={{background: "#033E3E"}} href={`/movie/add`}>
           <VideoCallIcon fontSize="large"  style={{color: "white"}}/>
           </IconButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
           <a><b>ADD MOVIES</b></a>
@@ -60,7 +72,7 @@ retrieveMovie(){
                      {this.state.movie.map((movie,index)=>(
                       <tr>
                           <th scope='row'>{index + 1}</th>
-                          <td><a href={`/specificmovie/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
+                          <td><a href={`/specific/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
                           <td>{movie.timeSlot}</td>
                           <td>{movie.description}</td>
                           <td>{movie.cast}</td>
@@ -68,13 +80,13 @@ retrieveMovie(){
                             
                           <IconButton aria-label="edit" color="primary" size="small"
                             style={{background: "#FBB917"}}
-                            href={`/edit/${movie._id}`}>
+                            href={`/update/${movie._id}`}>
                             <EditIcon fontSize="small"  style={{color: "black"}} />
                           </IconButton>
                             &nbsp;&nbsp;&nbsp;&nbsp;
 
                           <IconButton aria-label="delete" size="small"
-                              style={{background: "#800000"}} >
+                              style={{background: "#800000"}} onClick={()=>this.onDelete(movie._id)}>
                              <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>
                           </IconButton>
                           </td>

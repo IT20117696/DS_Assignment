@@ -33,8 +33,8 @@ router.route('/movie/display').get((req,res)=>{
 });
 
 //get a specific movie details details 
-router.route('/display/:id').get((req,res)=>{
-    let movieID = req.params.id;
+router.route('/specific/:movieID').get((req,res)=>{
+    let movieID = req.params.movieID;
     movie.findById(movieID,(err,movie)=>{
         if(err){
             return res.status(400).json({
