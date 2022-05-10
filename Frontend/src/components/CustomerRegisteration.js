@@ -17,7 +17,7 @@ export default function CustomerRegisteration(){
             email : email,
             pwd : pwd1
         }
-        if(pwd1 == pwd2){
+        if(pwd1==pwd2){
             axios.post("localhost:8070/api/customer/signup",new_customer )
             .then(()=>{
                 alert("Registeration Success!!");
