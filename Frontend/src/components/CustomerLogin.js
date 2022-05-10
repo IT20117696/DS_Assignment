@@ -21,7 +21,7 @@ export default class CustomerLogin extends Component {
           pwd:this.state.pwd
       }
 
-    await axios.post("localhost:8070/api/customer/signin",userData)
+    await axios.post("http://localhost:8070/api/customer/signin",userData)
        .then((res)=>{
            this.setState({
                token:res.data.token
@@ -32,7 +32,7 @@ export default class CustomerLogin extends Component {
        .catch((err)=>{
            console.log(err)
            this.setState({open:true})
-           alert('Loging Failde',err);
+           alert('Loging Failded.Please Try again!!',err);
        })
       }
 

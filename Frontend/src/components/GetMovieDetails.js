@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@material-ui/icons/Edit';
+import VideoCallIcon from '@mui/icons-material/VideoCall';
 
 export default class GetMovieDetails extends Component {
     constructor(props){
@@ -12,9 +13,9 @@ export default class GetMovieDetails extends Component {
         };
     }
 
-onReadirect(id){
-    window.location.href = `/movieadd`
-}
+// onReadirect(id){
+//     // window.location.href = `/movieadd`
+// }
 
 componentDidMount(){
     this.retrieveMovie();
@@ -30,10 +31,20 @@ retrieveMovie(){
         }
     })
 }
- 
-    render() {
+  render() {
     return (
       <div className='container'>
+          <br/>
+          <div align="right">
+          <br/>
+          <IconButton aria-label="delete" size="small"
+                      style={{background: "#800000"}} href={`/movie/add`}>
+          <VideoCallIcon fontSize="large"  style={{color: "white"}}/>
+          </IconButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+          <a><b>ADD MOVIES</b></a>
+
+          <br/><br/><br/>
+          </div>
           <table class = "table">
               <thead>
                   <tr>
@@ -42,11 +53,11 @@ retrieveMovie(){
                       <th scope='col'>Show Time</th>
                       <th scope='col'>Description</th>
                       <th scope='col'>Cast</th>
-                      <th scope='col'>Action</th>
+                      <th scope='col'>&nbsp;&nbsp;&nbsp;&nbsp;Action</th>
                   </tr>
               </thead>
               <tbody>
-              {this.state.movie.map((movie,index)=>(
+                     {this.state.movie.map((movie,index)=>(
                       <tr>
                           <th scope='row'>{index + 1}</th>
                           <td><a href={`/specificmovie/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
@@ -54,13 +65,14 @@ retrieveMovie(){
                           <td>{movie.description}</td>
                           <td>{movie.cast}</td>
                           <td>
-                          <IconButton aria-label='btn btn-success' size="small"
-                             style={{background: "#FBB917"}}
-                                onClick={()=>this.onReadirect(movie._id)} >
-                             <AddCircleOutlineIcon  fontSize="small" style={{color: "black"}}/>
-                          </IconButton> 
-                             &nbsp;&nbsp;&nbsp;&nbsp;
                             
+                          <IconButton aria-label="edit" color="primary" size="small"
+                            style={{background: "#FBB917"}}
+                            href={`/edit/${movie._id}`}>
+                            <EditIcon fontSize="small"  style={{color: "black"}} />
+                          </IconButton>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+
                           <IconButton aria-label="delete" size="small"
                               style={{background: "#800000"}} >
                              <DeleteForeverIcon fontSize="small"  style={{color: "white"}}/>

@@ -5,6 +5,8 @@ import CustomerLogin from './components/CustomerLogin';
 import CustomerRegisteration from './components/CustomerRegisteration';
 import GetMovieDetails from './components/GetMovieDetails';
 import SpecificMovie from './components/SpecificMovie';
+import AddMovie from './components/AddMovie';
+import EditMovie from './components/EditMovie';
 
 
 function App(){
@@ -15,8 +17,11 @@ function App(){
                
                 <div>
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
-                <Route path = "/movie" component={GetMovieDetails}/>
+                <Route path = "/movie/add" component={AddMovie}/>      
+                <Route path = "/movie/display" component={GetMovieDetails}/>
                 <Route path = "/specificmovie/:id" component={SpecificMovie}/>
+                <Route path = "/movie/edit/:id" component={EditMovie}/>
+           
                 </div> 
             </Switch>
         </BrowserRouter>
