@@ -21,35 +21,33 @@ const handleClose = (reason) => {
     setOpen(false);
  };
  return (
-    <div style={{width: 260, paddingBottom: 15}}>  
+    <div style={{width: 260, paddingBottom: 15}} >  
     <Snackbar open={open} autoHideDuration={3000} onClose={handleClose} anchorOrigin={{
       vertical: 'bottom',
       horizontal: 'left',
     }}>
 
     </Snackbar>
-    <div class="card"  style={{ background: "#1A233A",color:"#FFFFFF",}} align="center">
-    <div style={{overflow: 'hidden', height: 300}} >
+    <div class="card"  style={{ background: "white",color:"black",}}>
+    <div style={{overflow: 'hidden', height: 300}}>
 
     <img src={banner} width={258} onClick={MovieHome} id="sa_image" />
     </div>
     <div class="content text-color p-2" >   
-    <div style={{ fontSize:23,fontWeight:"bold"}} >
+    <div style={{ fontSize:23,fontWeight:"bold"}} align='left'>
 
     {movieName.length > 13 ? <div >{movieName.substr(0, 14)}...</div> : movieName}  </div>         
-             <div class="description text-color" >
-              Brand : {movieName}
-              </div>   
+    <div class="description text-color" align='left' > Movie Name : {movieName} </div>   
               
-               <Typography component={'span'} variant={'body2'}>
-               <div className="row" style={{ paddingLeft: 0 }} >
-               <div className="text-color" style={{fontSize: 18, paddingBottom: 8}}>{cast}</div>
-               </div>
-               </Typography>
-           </div>
-           <div class="extra content"></div>
-         </div>
-       </div>
-       );
+    <Typography component={'span'} variant={'body2'}>
+    <div className="row" style={{ paddingLeft: 0 }} >
+    <div className="text-color" style={{fontSize: 18, paddingBottom: 8}}  align='left'>{cast}</div>
+    </div>
+    </Typography>
+    </div>
+    <div class="extra content"></div>
+    </div>
+    </div>
+  );
 }
 export default Movie;

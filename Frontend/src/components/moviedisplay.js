@@ -36,9 +36,11 @@ const MovieDisplay = () => {
     return setCurrentPage(pageNumber)
  }
  return(
-    <div className="container">
+    <div style={{ backgroundImage: 'url(https://i.pinimg.com/736x/8b/9a/ab/8b9aabc3524870c8821d00aa1190f858.jpg)', height: "1000px" }} >
+    <div className="container" align="center">
+     <br/><br/>
      <div className="row" style={{ paddingTop: 15 }}>
-         {currentPost.map((movie) => (
+     {currentPost.map((movie) => (
      <div key={movie._id} className="col-lg-3 col-md-6">
        <div className="ui link cards">
          <Movie
@@ -60,6 +62,7 @@ const MovieDisplay = () => {
        paginate={paginate}/>
    </div>
  </div>
+</div>
  )
 }
 
