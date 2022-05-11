@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Paginat from './paginationComponent';
 import Movie from './MainMoviePage';
+import MovieMainNavBar from './MovieMainNavBar';
+import Footer from './footer';
 
 const MovieDisplay = () => {
     const [isLoading, setLoading] = useState(true)
@@ -36,6 +38,8 @@ const MovieDisplay = () => {
     return setCurrentPage(pageNumber)
  }
  return(
+    <div>
+      <MovieMainNavBar/>
     <div style={{ backgroundColor:"#0C090A" ,height:"1000px"}} >
     <div className="container" align="center">
      <br/><br/>
@@ -62,6 +66,8 @@ const MovieDisplay = () => {
        paginate={paginate}/>
    </div>
  </div>
+</div>
+<Footer/>
 </div>
  )
 }
