@@ -7,13 +7,15 @@ import GetMovieDetails from './components/GetMovieDetails';
 import SpecificMovie from './components/SpecificMovie';
 import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
+import MovieDisplay from './components/moviedisplay';
 
 
 function App(){
     return (
         <BrowserRouter>
             <Switch>
-                <Route path= "/" component={CustomerLogin} exact/>
+                {/* <Route path= "/" component={CustomerLogin} exact/> */}
+                <Route path= "/" component={MovieDisplay} exact/>
                
                 <div>
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
