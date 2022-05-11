@@ -36,7 +36,7 @@ const MovieDisplay = () => {
     return setCurrentPage(pageNumber)
  }
  return(
-    <div style={{ backgroundImage: 'url(https://i.pinimg.com/736x/8b/9a/ab/8b9aabc3524870c8821d00aa1190f858.jpg)', height: "1000px" }} >
+    <div style={{ backgroundColor:"#0C090A" ,height:"1000px"}} >
     <div className="container" align="center">
      <br/><br/>
      <div className="row" style={{ paddingTop: 15 }}>

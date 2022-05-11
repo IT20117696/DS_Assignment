@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Book Movies (add)
 router.route('/bookMovie/add').post((req,res)=>{
-    let newBookMovie = new bookmovie (req.body);
+    let newBookMovie = new bookmovie(req.body);
     newBookMovie.save((err)=>{
         if(err){
             return res.status(400).json({

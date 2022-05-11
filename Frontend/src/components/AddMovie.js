@@ -47,7 +47,7 @@ export default class AddMovie extends Component {
   render() {
     return (
       <div align="center">
-
+         <br/> <br/>
          <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
          <div className="card-header py-3">
           <div class="card-header" style={{background: "#E3E4FA"}}><h2>Add New Movies</h2></div>
