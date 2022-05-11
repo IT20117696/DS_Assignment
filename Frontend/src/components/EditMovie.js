@@ -121,7 +121,7 @@ export default class EditMovie extends Component {
          </div>
 
          <button className="btn btn-primary" type="submit" style={{marginBottom:'5px'}} onClick={this.onSubmit}>
-          &nbsp; Add Movie
+          &nbsp; Update Movie
           </button>
 
        </form><br/>
