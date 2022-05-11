@@ -21,7 +21,7 @@ const handleClose = (reason) => {
     setOpen(false);
  };
  return (
-    // <div style={{width: 260, paddingBottom: 15}} >  
+
     <div class="card"  style={{ background: "white",color:"black",}} >
     <div style={{overflow: 'hidden', height: 420}}>
 
@@ -30,21 +30,18 @@ const handleClose = (reason) => {
 
     <div class="content text-color p-2" >   
     <div style={{ fontSize:23,fontWeight:"bold"}} align='left'>
- 
-
-    {movieName.length > 13 ? <div >{movieName.substr(0, 14)}...</div> : movieName}  </div>         
-    <div class="description text-color" align='left' > Movie Name : {movieName} </div>   
+    {movieName.length > 13 ? <div >{movieName.substr(0, 14)}...</div> : movieName}  </div>            
               
     <Typography component={'span'} variant={'body2'}>
     <div className="row" style={{ paddingLeft: 0 }} >
-    <div className="text-color" style={{fontSize: 18, paddingBottom: 8}}  align='left'>{cast}</div>
+    <div className="text-color" style={{fontSize: 18, paddingBottom: 8}}  align='left'>Movie Cast Date : {cast}</div>
     </div>                      
 
     </Typography>
     </div>
     <div class="extra content"></div>
     </div>
-    // </div>
+   
   );
 }
 export default Movie;
