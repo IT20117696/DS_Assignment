@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
-import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 export default class SpecificMovie extends Component {
@@ -26,7 +26,7 @@ export default class SpecificMovie extends Component {
   }
 
   render() {
-    const {movieName,timeSlot,description,banner,cast} = this.state.movie;
+    const {movieName,timeSlot,description,banner,cast,_id} = this.state.movie;
     
     return (
              <div align="center" ><br/>
@@ -45,10 +45,10 @@ export default class SpecificMovie extends Component {
              <br/><br/>
 
              <Button
-               href='/bookmovie/add'
+               href={`/bookmovie/add/${_id}`}
                   style={{ color:"white", background:"#08368b" }}
                   variant="outlined"
-                  startIcon={<BookmarkAddedIcon />}
+                  startIcon={<AddShoppingCartIcon />}
                 >
                 Add To Cart
               </Button> &nbsp;&nbsp; &nbsp;&nbsp;

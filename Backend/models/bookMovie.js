@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const bookmovieSchema = new mongoose.Schema({
+
     theater:{
         type:String,
         required:true,
@@ -23,9 +24,14 @@ const bookmovieSchema = new mongoose.Schema({
 
     amount:{
         type:String,
+        // required:true,
+    },
+    
+    movieName:{
+        type:String,
         required:true,
     },
-
+    
 })
 
 const BookMovie = mongoose.model("Book Movie",bookmovieSchema);

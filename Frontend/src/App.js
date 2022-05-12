@@ -9,6 +9,7 @@ import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
 import MovieDisplay from './components/moviedisplay';
 import BookMovie from './components/BookMovie';
+import PaymentMethod from './components/paymentMethod';
 
 
 function App(){
@@ -24,7 +25,8 @@ function App(){
                 <Route path = "/movie/display" component={GetMovieDetails}/>
                 <Route path = "/specific/:movieID" component={SpecificMovie}/>
                 <Route path = "/update/:movieID" component={EditMovie}/>
-                <Route path = "/bookMovie/add" component={BookMovie}/>
+                <Route path = "/bookMovie/add/:id" component={BookMovie}/>
+                <Route path = "/paymentmethod/add/:id" component={PaymentMethod} />
            
                 </div> 
             </Switch>
