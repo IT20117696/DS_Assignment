@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Button from "@material-ui/core/Button";
+import MovieMainNavBar from './MovieMainNavBar';
+import Footer from './footer';
 
 export default class CustomerLogin extends Component {
     constructor(props){
@@ -11,7 +14,8 @@ export default class CustomerLogin extends Component {
             email:"",
             pwd:"",
             token: "",
-            open: false
+            open: false,
+            movie :{}
         }
     }  
       async CustomerLoginSubmit(e){
@@ -44,29 +48,60 @@ export default class CustomerLogin extends Component {
      };
 
     render() {
+      const {_id} = this.state.movie;
     return (
-      <div>
-          <form onSubmit={this.CustomerLoginSubmit} name="form">
-              <label> Email</label>
-              <input type="text" name="email" placeholder='Enter email here' 
-                 onChange={e=>this.setState({email:e.target.value})} required/>
-              
-              <br/><br/>
 
-              <label> Password </label>
-              <input type="password" name='password' placeholder='Enter password here'
-                 onChange={e=>this.setState({pwd:e.target.value})} required/>
+    <div style={{ backgroundColor:"#2B3856" }} >
+     <MovieMainNavBar/><br/><br/><br/>
+     <div class="row d-flex align-items-center justify-content-center">
+      <div style={{width: 900,background: "#CCCCFF",height:450}}><br/>
+        <div class="card-body" > 
+          <div class="container py-5 h-90" > 
+           <div class="row d-flex align-items-center justify-content-center h-100">      
              
-            
-<br/>
-            <button type="submit">Login</button>
-          <br/>
-            <label class="label">Already Registered ?</label>
-            <a href='/customer/signup'>Sign Up</a>
-    
+             <div class="col-md-8 col-lg-7 col-xl-6"> 
+               <img src="https://ey5me.csb.app/happy.svg" class="img-fluid" alt="Phone image"/>  <br/><br/>
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <u><b>CUSTOMER&nbsp;&nbsp;LOGIN</b></u></h2> 
+              </div>
+              
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <form onSubmit={this.userLoginSubmit} name="form"> 
+                      <div class="form-outline mb-4">  
+                      <div className="col-md-9">
+                      <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
+                        <label class="form-label"><b>User Email Address </b></label>
+                          <input type="text" name="email" placeholder='Enter email here' class="form-control "
+                                  onChange={e=>this.setState({email:e.target.value})} required/>
+                      </div>
+                      </div>
 
-      </form>
-      </div>
+                      <div class="form-outline mb-4" >
+                        <div className="col-md-9">
+                        <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                        <label class="form-label"><b>PASSWORD</b></label>
+                        <input type="password" name="password" class="form-control " placeholder="Enter your Password" 
+                                onChange={e=>this.setState({pwd:e.target.value})} required/> 
+                      </div>
+                    </div>
+               <Button 
+                   href={`/bookmovie/add/${_id}`}
+                    type="submit" class="btn btn-primary">
+                  <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
+     
+                <div class="divider d-flex align-items-center my-4">
+                      <center><label >Not Registered? &nbsp;&nbsp;</label>
+                      <a href='/customer/signup'>Sign Up</a></center>
+                 </div>
+               </form>   
+             </div> 
+           </div>
+         </div>
+       </div>
+     </div>
+   </div><br/><br/>
+   <Footer/>
+</div>
     )
   }
 }

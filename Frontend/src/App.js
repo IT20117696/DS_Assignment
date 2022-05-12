@@ -12,13 +12,14 @@ import BookMovie from './components/BookMovie';
 import AddCardDetails from './components/AddCardDetails';
 
 
+
 function App(){
     return (
         <BrowserRouter>
             <Switch>
-                {/* <Route path= "/" component={CustomerLogin} exact/> */}
+                <Route path= "/customer/signin" component={CustomerLogin} exact/>
                 <Route path= "/" component={MovieDisplay} exact/>
-               
+
                 <div>
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
                 <Route path = "/movie/add" component={AddMovie}/>      

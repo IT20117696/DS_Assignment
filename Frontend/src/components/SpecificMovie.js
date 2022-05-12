@@ -47,7 +47,8 @@ export default class SpecificMovie extends Component {
              <br/><br/>
              
              <Button
-               href={`/bookmovie/add/${_id}`}
+                  // href={`/bookmovie/add/${_id}`}
+                  href='/customer/signin'
                   style={{ color:"white", background:"#08368b" }}
                   variant="outlined"
                   startIcon={<AddShoppingCartIcon />}
