@@ -12,7 +12,6 @@ import BookMovie from './components/BookMovie';
 import AddCardDetails from './components/AddCardDetails';
 
 
-
 function App(){
     return (
         <BrowserRouter>
