@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const addCardDetailsSchema = new mongoose.Schema({
     cardNumber:{
-        type:number,
+        type:Number,
         required:true,
     },
     cardHolderName:{
@@ -10,7 +10,7 @@ const addCardDetailsSchema = new mongoose.Schema({
         required:true,
     },
     cvv:{
-        type:number,
+        type:Number,
         required:true,
     },
     expirationMonth:{
@@ -18,7 +18,7 @@ const addCardDetailsSchema = new mongoose.Schema({
         required:true,
     },
     expirationYear:{
-        type:number,
+        type:Number,
         required:true,
     },
 

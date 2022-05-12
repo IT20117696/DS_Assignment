@@ -40,12 +40,14 @@ const customerRouter = require("./routes/customer");
 const movieRouter = require("./routes/movie");
 const bookMovieRouter = require("./routes/bookMovie");
 const paymentMethodRouter = require('./routes/paymentMethod');
+const addCardDetailsRouter = require('./routes/addCardDetails');
 
 //use routes
 app.use('/api',customerRouter);
 app.use('/api',movieRouter);
 app.use('/api',bookMovieRouter);
 app.use('/api',paymentMethodRouter);
+app.use('/api',addCardDetailsRouter);
 
 app.listen(PORT,()=>{
     console.log(`App is running on on port number: ${PORT}`)
