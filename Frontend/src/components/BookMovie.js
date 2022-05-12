@@ -3,6 +3,7 @@ import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import CancelIcon from '@mui/icons-material/Cancel';
+import MovieMainNavBar from './MovieMainNavBar';
 
 export default class BookMovie extends Component {
     constructor(props){
@@ -12,7 +13,8 @@ export default class BookMovie extends Component {
             timeSlot:"",
             bookingDate:"",
             noOfTickects:"",
-            // totalAmount:"",
+            amount:"", 
+           
    }
 }
 handleInputChange = (e)=>{
@@ -22,15 +24,16 @@ handleInputChange = (e)=>{
       [name]:value
     });
   } 
+
   onSubmit = (e)=>{
     e.preventDefault();
-    const{theater,timeSlot,bookingDate,noOfTickects} = this.state;
+    const{theater,timeSlot,bookingDate,noOfTickects,amount} = this.state;
     const data = {
         theater:theater,
         timeSlot:timeSlot,
         bookingDate:bookingDate,
         noOfTickects:noOfTickects,
-        // totalAmount:totalAmount
+        amount:amount
     }
     console.log(data);
     axios.post("http://localhost:8070/api/bookMovie/add",data).then((res)=>{
@@ -41,7 +44,7 @@ handleInputChange = (e)=>{
             timeSlot:"",
             bookingDate:"",
             noOfTickects:"",
-            // totalAmount:"",
+            amount:"",
           });
         }
       });
@@ -49,15 +52,16 @@ handleInputChange = (e)=>{
     
     render() {
     return (
-      <div align="center">
-         <br/> <br/>
-         <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
-           <div className="card-header py-3">
-            <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div>
+      <div style={{ backgroundColor:"#123456" ,height:"900px"}} >
+       <MovieMainNavBar/>
+        <div align="center">
+         <br/><br/><br/><br/><br/><br/>
+          <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
+            <div className="card-header py-3">
+             <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div>
               <br/> 
 
           <form className="row g-3" > 
-          
           <div className="col-md-6">
             <div align="left">
              <label style={{marginBottom:'2px'}} className="form-label"  Required="required"><b> Theaters </b></label></div>
@@ -104,7 +108,20 @@ handleInputChange = (e)=>{
               value={this.state.noOfTickects } 
               onChange={this.handleInputChange} /><br/>
             </div>
-            
+
+         
+            <div className="col-md-6">
+            <div align="left">
+             <label style={{marginBottom:'5px'}} className="form-label"><b>Total Amount : {}</b> </label></div>
+            </div>
+
+            <div className="col-md-6">
+            <div align="left">
+             <input type="text" className="form-control" name="amount" placeholder="Please Enter Total Amount" Required = "required" 
+              value={this.state.amount } 
+              onChange={this.handleInputChange} /><br/>
+            </div></div>
+
             <div align="right">
             <Button
                  onClick={this.onSubmit}
@@ -121,9 +138,10 @@ handleInputChange = (e)=>{
                   startIcon={<CancelIcon />}
                 >
                  Cancel Booking
-              </Button>  </div>            
-
+                  </Button> 
+                </div>            
                </form>
+              </div>
             </div>
            </div>
          </div>   

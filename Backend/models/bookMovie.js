@@ -21,10 +21,10 @@ const bookmovieSchema = new mongoose.Schema({
         required:true,
     },
 
-    // totalAmount:{
-    //     type:String,
-    //     required:true,
-    // },
+    amount:{
+        type:String,
+        required:true,
+    },
 
 })
 
