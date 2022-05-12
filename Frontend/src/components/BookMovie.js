@@ -9,6 +9,7 @@ export default class BookMovie extends Component {
     constructor(props){
         super(props);
         this.state = {
+            id:"",
             movie:{},
             theater:"",
             timeSlot:"",
@@ -18,6 +19,8 @@ export default class BookMovie extends Component {
             bookmovie:{}       
    }
 }
+
+
 componentDidMount(){
   const id = this.props.match.params.id;
    axios.get(`http://localhost:8070/api/bookMovie/add/${id}`).then((res)=>{
@@ -37,7 +40,8 @@ handleInputChange = (e)=>{
     });
   } 
 
-  onSubmit = (e)=>{
+
+ onSubmit = (e)=>{
     e.preventDefault();
     const{movieName,theater,timeSlot,bookingDate,noOfTickects} = this.state;
     const amount = 700 * this.state.noOfTickects;
@@ -49,19 +53,22 @@ handleInputChange = (e)=>{
         noOfTickects:noOfTickects,
         amount:amount
     }
-    // console.log(data);
-    axios.post("http://localhost:8070/api/bookMovie/add",data).then((res)=>{
-      if(res.status){
-        this.setState({
-          bookmovie:res.bookmovie
-        });
-        console.log(this.bookmovie)
-      }
-      });
-      window.location=(`/paymentmethod/add/${this.state.bookmovie._id}`);
+    console.log(data);
+if(data){
+  axios.post("http://localhost:8070/api/bookMovie/add",data).then((res)=>{
+    if(res.data.status){
+      console.log("complete");
+      window.location=(`/carddetails/add/${res.data.bookmovie._id}`);
       
     }
+    });
 
+
+}
+      
+//  const id =this.props.match.params.id;
+     
+    }
     
     render() {
       const {movieName} = this.state.movie ;
@@ -131,7 +138,7 @@ handleInputChange = (e)=>{
               </Button> &nbsp;&nbsp; &nbsp;&nbsp;
               <Button
                   href='/'
-                  style={{ color:"white", background:"#08368b" }}
+                  style={{ color:"white", background:"#A70D2A" }}
                   variant="outlined"
                   startIcon={<CancelIcon />}
                 >

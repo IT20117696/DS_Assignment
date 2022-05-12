@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const addCardDetailsSchema = new mongoose.Schema({
+    cardMethod:{
+        type:String,
+        required:true,
+    },
+
     cardNumber:{
         type:Number,
         required:true,
@@ -21,7 +26,6 @@ const addCardDetailsSchema = new mongoose.Schema({
         type:Number,
         required:true,
     },
-
 });
 
 const AddCardDetails = mongoose.model("Card Details",addCardDetailsSchema);

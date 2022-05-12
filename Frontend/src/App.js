@@ -9,7 +9,6 @@ import AddMovie from './components/AddMovie';
 import EditMovie from './components/EditMovie';
 import MovieDisplay from './components/moviedisplay';
 import BookMovie from './components/BookMovie';
-import PaymentMethod from './components/paymentMethod';
 import AddCardDetails from './components/AddCardDetails';
 
 
@@ -27,8 +26,7 @@ function App(){
                 <Route path = "/specific/:movieID" component={SpecificMovie}/>
                 <Route path = "/update/:movieID" component={EditMovie}/>
                 <Route path = "/bookMovie/add/:id" component={BookMovie}/>
-                <Route path = "/paymentmethod/add/:id" component={PaymentMethod} />
-                <Route path = "/carddetails/add" component={AddCardDetails}/>
+                <Route path = "/carddetails/add/:id" component={AddCardDetails}/>
            
                 </div> 
             </Switch>

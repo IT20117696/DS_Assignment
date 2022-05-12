@@ -1,6 +1,7 @@
 const express = require ('express');
 const bookmovie = require('../models/bookMovie');
 const Movie = require ('../models/movie');
+const { route } = require('./customer');
 const router = express.Router();
 
 //Book Movies (add)
@@ -37,5 +38,26 @@ router.get("/bookMovie/add/:id",async (req, res) => {
         .send({ status: "Error", error: error.message });
     }
   });
+   router.get("/carddetails/display/:id",async(req,res)=>{
+   const id = req.params.id;
+      if(id){
+        bookmovie.findById(id).exec((err,bookmovie)=>{
+          if(err){
+            return res.status(400).json({
+              error:err
+            })
+          }return res.status(200).json({
+            success: true,
+            selectedBookmovie:bookmovie
+          })
+          
+        })
+      } else{
+        return res.status(400).json({
+          error:"Data Fetch Error !!"
+        }
+         )}
+
+   })
 
 module.exports = router;
