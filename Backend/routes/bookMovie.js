@@ -26,7 +26,7 @@ router.get("/bookMovie/add/:id",async (req, res) => {
         {
             throw new Error ("no movie")
         }
-        console.log(movie)
+        // console.log(movie)
       res
         .status(201)
         .send({ status: "Movie retrived", movie: movie

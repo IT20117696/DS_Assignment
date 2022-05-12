@@ -71,17 +71,12 @@ handleInputChange = (e)=>{
        <MovieMainNavBar/>
         <div align="center"> <br/><br/><br/><br/><br/>
           <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
-            <div className="card-header py-3">
-             <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div>
-              <br/>
+            <div className="card-header mt-2">
+             <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div><br/>
 
-          <form className="row g-2" > 
-
-          <div className="col-md-6" align="left">
-          <label style={{marginBottom:'5px'}} className="form-label" ><b>Movie Name</b></label>
-          <input type="text" className="form-control" placeholder={movieName} name="movieName" readOnly/><br/>
-          </div>
-
+          <form className="row g-3" > 
+          <a style={{fontSize: 30, color: "#000080",fontFamily:'Monotype Corsiva'}}> <b><u>{movieName}</u></b></a>
+     
           <div className="col-md-6" align="left">
              <label style={{marginBottom:'5px'}} className="form-label"  Required="required"><b> Theaters </b></label>
              <select className="form-control" name="theater"  value={this.state.theater}
@@ -125,12 +120,6 @@ handleInputChange = (e)=>{
               onChange={this.handleInputChange} /><br/>
             </div>
 
-            {/* <div className="col-md-6" align="left">
-            <label style={{marginBottom:'5px'}} className="form-label"><b>Total Amount</b> </label>
-             <input type="text" className="form-control" name="total" placeholder={this.state.amount}
-             readOnly/><br/>
-            </div> */}
-
             <div align="right">
             <Button
                   onClick={this.onSubmit}
@@ -147,7 +136,7 @@ handleInputChange = (e)=>{
                   startIcon={<CancelIcon />}
                 >
                  Cancel Booking
-                  </Button> <br/>
+                  </Button> <br/> <br/>
                 </div>            
                </form>
               </div>

@@ -49,7 +49,7 @@ render() {
               
               <form> 
               <div className="col-md-6" align="left">
-                <label style={{marginBottom:'5px'}} className="form-label"><b>Total Amount : {}</b> </label>
+                <label style={{marginBottom:'5px',fontSize: 20, color: "#737CA1"}} className="form-label"><b> Your Total Amount : {}</b> </label>
               </div><br/>
 
               <div class="form-check" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -66,7 +66,7 @@ render() {
               
               <div align="center">
               <Button
-                  // onClick={this.onSubmit}
+                  href='/carddetails/add'
                   style={{ color:"white", background:"#08368b"}}
                   variant="outlined"
                   startIcon={<AddTaskIcon />}
@@ -74,11 +74,11 @@ render() {
                </Button> &nbsp;&nbsp; &nbsp;&nbsp;
                
                <Button
-                  // href='/'
+                  href='/'
                   style={{ color:"white", background:"#08368b" }}
                   variant="outlined"
                   startIcon={<ArrowCircleLeftIcon />}
-                > Go Back
+                > Go Home Page
                </Button> 
                        <br/>
                      <br/>

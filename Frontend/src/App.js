@@ -10,6 +10,7 @@ import EditMovie from './components/EditMovie';
 import MovieDisplay from './components/moviedisplay';
 import BookMovie from './components/BookMovie';
 import PaymentMethod from './components/paymentMethod';
+import AddCardDetails from './components/AddCardDetails';
 
 
 function App(){
@@ -27,6 +28,7 @@ function App(){
                 <Route path = "/update/:movieID" component={EditMovie}/>
                 <Route path = "/bookMovie/add/:id" component={BookMovie}/>
                 <Route path = "/paymentmethod/add/:id" component={PaymentMethod} />
+                <Route path = "/carddetails/add" component={AddCardDetails}/>
            
                 </div> 
             </Switch>
