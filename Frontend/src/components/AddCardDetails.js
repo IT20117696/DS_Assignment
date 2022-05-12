@@ -5,6 +5,10 @@ import PaidIcon from '@mui/icons-material/Paid';
 import CancelIcon from '@mui/icons-material/Cancel';
 import MovieMainNavBar from './MovieMainNavBar';
 import Footer from './footer';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 
 export default class AddCardDetails extends Component {
   constructor(props){
@@ -52,8 +56,9 @@ export default class AddCardDetails extends Component {
     }
 
     console.log(data);
-  axios.post("http://localhost:8070/api/carddetails/add",data).then((res)=>{
+    axios.post("http://localhost:8070/api/carddetails/add",data).then((res)=>{
     if(res.data.success){
+      toast.success('Cart Details Added Successfully',{position:toast.POSITION.TOP_CENTER});
         this.setState({
           cardMethod:"",
           cardNumber:"",
@@ -64,7 +69,9 @@ export default class AddCardDetails extends Component {
           totalAmount:""
         });
       }
-    });
+    }).catch(()=>{
+      toast.success('Cart Details Added UnSuccessfully',{position:toast.POSITION.TOP_CENTER});
+     });
   }
 
   render() {

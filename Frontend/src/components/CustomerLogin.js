@@ -15,7 +15,7 @@ export default class CustomerLogin extends Component {
             pwd:"",
             token: "",
             open: false,
-            movie :{}
+         
         }
     }  
       async CustomerLoginSubmit(e){
@@ -48,7 +48,6 @@ export default class CustomerLogin extends Component {
      };
 
     render() {
-      const {_id} = this.state.movie;
     return (
 
     <div style={{ backgroundColor:"#2B3856" }} >
@@ -85,7 +84,7 @@ export default class CustomerLogin extends Component {
                       </div>
                     </div>
                <Button 
-                   href={`/bookmovie/add/${_id}`}
+                  // href={`/bookmovie/add/${_id}`}
                     type="submit" class="btn btn-primary">
                   <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
      

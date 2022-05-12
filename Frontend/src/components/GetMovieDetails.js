@@ -4,6 +4,11 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
+import MovieMainNavBar from './MovieMainNavBar';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 
 export default class GetMovieDetails extends Component {
     constructor(props){
@@ -13,15 +18,14 @@ export default class GetMovieDetails extends Component {
         };
     }
 
-// onReadirect(id){
-//     // window.location.href = `/movieadd`
-// }
+onReadirect(id){
+    window.location.href = `/movie/display`
+}
 
 //retrieve all movie details
 componentDidMount(){
     this.retrieveMovie();
 }    
-
 retrieveMovie(){
     axios.get("http://localhost:8070/api/movie/display").then(res=>{
         if(res.data.success){
@@ -37,7 +41,7 @@ retrieveMovie(){
 onDelete = (movieID)=>{
   if (window.confirm('Are you sure you wish to delete this item?')) {
     axios.delete(`http://localhost:8070/api/delete/${movieID}`).then((res)=>{
-      alert("Delete Successfully!!");
+      toast.warning('Items Deleted Successfully',{position:toast.POSITION.TOP_CENTER});
       this.retrieveMovie();
     })
   }}
@@ -45,7 +49,10 @@ onDelete = (movieID)=>{
 
   render() {
     return (
+      <div>
+         <MovieMainNavBar/>
       <div className='container'>
+        
           <br/>
           <div align="right">
           <br/>
@@ -57,9 +64,9 @@ onDelete = (movieID)=>{
 
           <br/><br/><br/>
           </div>
-          <table class = "table">
+          <table class = "table" >
               <thead>
-                  <tr>
+                  <tr bgcolor="#BCC6CC">
                       <th scope='col'>No</th>
                       <th scope='col'>Movie Name</th>
                       <th scope='col'>Show Time</th>
@@ -94,6 +101,8 @@ onDelete = (movieID)=>{
         ))}
           </tbody>
         </table>
+      </div>
+  
       </div>
     )
   }

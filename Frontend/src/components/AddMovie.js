@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
 
 export default class AddMovie extends Component {
   constructor(props){
@@ -33,6 +37,11 @@ export default class AddMovie extends Component {
     console.log(data);
     axios.post("http://localhost:8070/api/movie/add",data).then((res)=>{
       if(res.data.success){
+          toast.success('Movie Added Successfully',{position:toast.POSITION.TOP_CENTER});
+          window.setTimeout(function() {
+          window.location.href = '/movie/display';
+         
+      }, 2000);        
         this.setState({
           movieName:"",
           timeSlot:"",
@@ -41,7 +50,9 @@ export default class AddMovie extends Component {
           cast:"",
         })
       }
-    })
+    }).catch(()=>{
+      toast.success('Movie Added UnSuccessfully',{position:toast.POSITION.TOP_CENTER});
+     });
   }
   
   render() {

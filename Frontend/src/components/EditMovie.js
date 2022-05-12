@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
+import MovieMainNavBar from './MovieMainNavBar';
+import Footer from './footer';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 
 export default class EditMovie extends Component {
   constructor(props){
@@ -41,8 +46,10 @@ export default class EditMovie extends Component {
    
    axios.put(`http://localhost:8070/api/update/${movieID}`,data).then((res)=>{
      if(res.data.success){
+      toast.success('Cart Details Added Successfully',{position:toast.POSITION.TOP_CENTER});
+      window.setTimeout(function() {
       window.location.href = '/movie/display';
-       alert("Movie update successfully!!");
+    }, 2000);   
        this.setState({
         movieName:"",
         timeSlot:"",
@@ -51,6 +58,8 @@ export default class EditMovie extends Component {
         cast:""
        });
      }
+   }).catch(()=>{
+    toast.success('Movie Added UnSuccessfully',{position:toast.POSITION.TOP_CENTER});
    });
  }
  componentDidMount(){
@@ -71,7 +80,9 @@ export default class EditMovie extends Component {
 
   render() {
     return (
-      <div align="center">
+      <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
+         <MovieMainNavBar/>
+      <div align="center"> <br/>
 
       <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
       <div className="card-header py-3">
@@ -124,9 +135,11 @@ export default class EditMovie extends Component {
           &nbsp; Update Movie
           </button>
 
-       </form><br/>
+       </form>
        </div>
        </div>
+   </div><br/>
+   <Footer/>
    </div>
     );
   }
