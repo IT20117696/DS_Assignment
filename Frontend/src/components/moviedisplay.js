@@ -39,14 +39,15 @@ const MovieDisplay = () => {
  }
  return(
     <div>
-      <MovieMainNavBar/>
-    <div style={{ backgroundColor:"#0C090A" ,height:"1000px"}} >
+    <MovieMainNavBar/>
+    <div style={{ backgroundColor:"#0C090A" ,height:"1400px"}} >
+    <br/><br/>
     <div className="container" align="center">
-     <br/><br/>
+  
      <div className="row" style={{ paddingTop: 15 }}>
      {currentPost.map((movie) => (
      <div key={movie._id} className="col-lg-3 col-md-6">
-       <div className="ui link cards">
+       <div className="ui link cards"><br/><br/>
          <Movie
            key={movie._id}
            movieID={movie._id}

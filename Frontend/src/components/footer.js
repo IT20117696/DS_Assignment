@@ -6,38 +6,31 @@ export default class footer extends Component {
         return (
             <div>
                 <div class="footer-dark">
-                <footer>
+                <footer><br/><br/>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3 item">
                                 <h3>QUICK LINKS</h3>
                                 <ul>
-                                    <li><a href="#">Home</a></li>
                                     <li><a href="#">About us</a></li>
+                                 
                                 </ul>
                             </div>
                             <div class="col-md-3 item">
                                 <h3>Services</h3>
                                 <ul>
                                     <li><a href="#">Web design</a></li>
-                                    <li><a href="#">Development</a></li>
-                                    <li><a href="#">Hosting</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 item">
                                 <h3>About</h3>
                                 <ul>
-                                    <li><a href="">Company</a></li>
-                                    <li><a href="#">Team</a></li>
-                                    <li><a href="#">Careers</a></li>
+                                    <p>SLIIT Campus DS Project</p>
                                 </ul>
                             </div>
                             <div class="col-md-3 item text">
- 
- 
-                                <h3>INFACT SOLUTION</h3>
-                                <p>Your number one source for all things tech. We're dedicated to giving you the very best of computer parts, with a focus on quality, price, brand.<br/>
-                                Having a creative team of people who understand the art of elite system building and maintenance.</p>
+                            <h3>MGM</h3>
+                            <p>MGM is a Online Movie Ticket reservation website.</p>
                             </div>
                             <div class="col item social">
                             <a href="#" class="fab fa-facebook-f"></a>

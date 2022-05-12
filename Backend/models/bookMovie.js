@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const bookmovieSchema = new mongoose.Schema({
 
     theater:{
@@ -24,7 +23,7 @@ const bookmovieSchema = new mongoose.Schema({
 
     amount:{
         type:String,
-        // required:true,
+        required:true,
     },
     
     movieName:{

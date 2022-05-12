@@ -14,7 +14,8 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-    email: {
+   
+      email: {
         type: String,
         required: true,
         lowercase: true,

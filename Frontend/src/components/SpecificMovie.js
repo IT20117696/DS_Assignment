@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import CancelIcon from '@mui/icons-material/Cancel';
+import MovieMainNavBar from './MovieMainNavBar';
+import Footer from './footer';
 
 export default class SpecificMovie extends Component {
   constructor(props){
@@ -29,21 +31,21 @@ export default class SpecificMovie extends Component {
     const {movieName,timeSlot,description,banner,cast,_id} = this.state.movie;
     
     return (
-             <div align="center" ><br/>
-             <Paper style={{textAlign:"center",borderRadius: 5,width:'570px',height:'820px'}}><br/>
+      <div style={{ backgroundColor:"#2B3856" ,height:"1100px"}} >
+         <MovieMainNavBar/>
+             <div align="center" ><br/><br/>
+             <Paper style={{textAlign:"center",borderRadius: 5,width:'570px',height:'900px'}}>
              <div
                 style={{
                   fontSize: 50,
                   color: "Black",
                   fontFamily: 'Tomes New Roman'
                 }}
-              >
-                {movieName}
+              > **- {movieName} -**
               </div>
-
              <img className="activator"  id="aimage" src={banner} width={350} />
              <br/><br/>
-
+             
              <Button
                href={`/bookmovie/add/${_id}`}
                   style={{ color:"white", background:"#08368b" }}
@@ -71,7 +73,7 @@ export default class SpecificMovie extends Component {
                
                 <tr>
                   <td><b>Description</b></td>
-                  <td style={{ paddingLeft: 18 }}>: {description}</td>
+                  <td style={{ paddingLeft: 10 }}>: {description}</td>
                 </tr>
                
                 <tr>
@@ -81,10 +83,10 @@ export default class SpecificMovie extends Component {
 
               </tbody>
             </table>
-           
-           </Paper>
+           </Paper><br/>
         </div>
-          
+      <Footer/>
+    </div>  
     )
   }
 }

@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import CancelIcon from '@mui/icons-material/Cancel';
 import MovieMainNavBar from './MovieMainNavBar';
+import Footer from './footer';
 
 export default class BookMovie extends Component {
     constructor(props){
@@ -54,27 +55,22 @@ handleInputChange = (e)=>{
         amount:amount
     }
     console.log(data);
-if(data){
-  axios.post("http://localhost:8070/api/bookMovie/add",data).then((res)=>{
-    if(res.data.status){
-      console.log("complete");
+    if(data){
+    axios.post("http://localhost:8070/api/bookMovie/add",data).then((res)=>{
+      if(res.data.status){
       window.location=(`/carddetails/add/${res.data.bookmovie._id}`);
       
-    }
+      }
     });
-
-
+ } 
 }
-      
-//  const id =this.props.match.params.id;
-     
-    }
-    
-    render() {
+  render() {
       const {movieName} = this.state.movie ;
       const {bookmovie} = this.state.bookmovie;
+    
     return (
-      <div style={{ backgroundColor:"#123456" ,height:"900px"}} >
+      <div>
+      <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
        <MovieMainNavBar/>
         <div align="center"> <br/><br/><br/><br/><br/>
           <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
@@ -124,10 +120,11 @@ if(data){
              <label style={{marginBottom:'5px'}} className="form-label"><b>No Of Tickects</b> </label>
              <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
               value={this.state.noOfTickects } 
-              onChange={this.handleInputChange} /><br/>
-            </div>
+              onChange={this.handleInputChange} />
+                 <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
+            </div><br/>
 
-            <div align="right">
+            <div align="right"><br/>
             <Button
                   onClick={this.onSubmit}
                   style={{ color:"white", background:"#08368b"}}
@@ -149,7 +146,9 @@ if(data){
               </div>
             </div>
            </div>
-         </div>   
+         </div>  
+       <Footer/>
+      </div> 
     )
   }
 }
