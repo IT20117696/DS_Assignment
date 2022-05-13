@@ -12,6 +12,7 @@ import BookMovie from './components/BookMovie';
 import AddCardDetails from './components/AddCardDetails';
 import MovieHomePage from './components/MovieHomePage';
 import AdminLogin from './components/AdminLogin';
+import AdminRegisteration from './components/AdminRegisteration';
 
 function App(){
     return (
