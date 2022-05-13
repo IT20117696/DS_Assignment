@@ -23,6 +23,7 @@
     "mongoose": "^6.3.2",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16",
+    "pdfkit": "^0.12.3",
     "react-router-dom": "^5.2.0",
     "util": "^0.12.4",
     "validator": "^13.7.0"

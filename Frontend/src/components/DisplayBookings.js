@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import IconButton from '@material-ui/core/IconButton';
 
 export default class DisplayBookings extends Component {
   constructor(props){
     super(props);
+    this.generateReport = this.generateReport.bind(this);
     this.state = {
         bookmovie :[]
     };
+}
+
+generatepdf(){
+  window.location.reload();
 }
 
 //retrieve all movie details
@@ -26,12 +33,36 @@ retrieveMovie(){
   })
 }
 
+//generate report
+async generateReport() {
+  const obj = {bookmovie: this.state.bookmovie }
+  await axios.post('http://localhost:8070/generatebookingreport', obj,{ responseType: 'arraybuffer', headers: { Accept: 'application/pdf', }, 
+  }).then((res) => {
+    alert('Report Generated')
+    const pdfBlog = new Blob([res.data], { type: 'application/pdf' });
+    saveAs(pdfBlog, 'Booking.pdf');
+  }).catch((err) => {
+    console.log(err.message) 
+  })  
+  console.log(obj) 
+}
+
+
   render() {
     return (
       <div>
          <MovieMainNavBar/>
          <div className='container'>
-         <br/>
+         <br/><br/>
+         <div align="right">
+          <br/>
+         <IconButton aria-label="delete" size="small"
+                      style={{background: "#033E3E"}} href={`/movie/add`}>
+          <FileDownloadIcon fontSize="large"  style={{color: "white"}}/>
+          </IconButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br/><a><b>Download&nbsp; Report</b></a> <br/> <br/></div>
+
+     
          <table class = "table" >
               <thead>
                   <tr bgcolor="#BCC6CC">
