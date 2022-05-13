@@ -37,12 +37,14 @@ console.log("Mongodb connection success!!!");
 
 //import routes
 const customerRouter = require("./routes/customer");
+const adminRouter = require("./routes/admin");
 const movieRouter = require("./routes/movie");
 const bookMovieRouter = require("./routes/bookMovie");
 const addCardDetailsRouter = require('./routes/addCardDetails');
 
 //use routes
 app.use('/api',customerRouter);
+app.use('/api',adminRouter);
 app.use('/api',movieRouter);
 app.use('/api',bookMovieRouter);
 app.use('/api',addCardDetailsRouter);
