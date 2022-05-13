@@ -57,7 +57,7 @@ export default class MovieMainNavBar extends Component {
           
             <div class="modal-body" align="right">
             <Button
-                  href='/'
+                  href='/customer/signin'
                   style={{ color:"white",background:"#990012" }}
                   variant="outlined"
                   startIcon={<AccountCircleIcon />}

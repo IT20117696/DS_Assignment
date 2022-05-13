@@ -11,7 +11,7 @@ import MovieDisplay from './components/moviedisplay';
 import BookMovie from './components/BookMovie';
 import AddCardDetails from './components/AddCardDetails';
 import MovieHomePage from './components/MovieHomePage';
-
+import AdminLogin from './components/AdminLogin';
 
 function App(){
     return (
@@ -24,6 +24,8 @@ function App(){
                 <div>
                 <Route path= "/dashboard" component={MovieDisplay} exact/>
                 <Route path= "/customer/signin" component={CustomerLogin}/>
+                <Route path= "/admin/signin" component={AdminLogin}/>
+                <Route path = "/admin/signup" component={AdminRegisteration}/>
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
                 <Route path = "/movie/add" component={AddMovie}/>      
                 <Route path = "/movie/display" component={GetMovieDetails}/>
