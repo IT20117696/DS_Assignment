@@ -29,7 +29,7 @@ const MovieDisplay = () => {
       }  
       getMovies()
    },[])
-   
+
    const indexOfLastPost = currentPage * postPerPage
    const indexOfFirstPost = indexOfLastPost - postPerPage
    const currentPost = movie.slice(indexOfFirstPost, indexOfLastPost)

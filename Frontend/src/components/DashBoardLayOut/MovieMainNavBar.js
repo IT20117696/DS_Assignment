@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export default class MovieMainNavBar extends Component {
-    render(){
+  render(){
         return(
     <div> 
        <nav class="navbar navbar-expand-lg " style={{ backgroundColor:"#0C090A"}} >

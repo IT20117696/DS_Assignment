@@ -47,8 +47,8 @@ export default function CustomerRegisteration(){
              <form action="" method="post" name="form" onSubmit={sendData}> 
               <div class="row g-0">
               <div class="col-xl-7 d-none d-xl-block"><br/>
-              <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <b><u>CUSTOMER&nbsp;&nbsp;REGISTERATION&nbsp;&nbsp; FORM</u></b></h3><br/>
+              <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <b><u>CUSTOMER&nbsp;&nbsp;REGISTERATION</u></b></h3><br/>
               <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/reading_0re1.svg" style={{width: 550}}/>
               </div>
              
