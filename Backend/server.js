@@ -42,6 +42,7 @@ const movieRouter = require("./routes/movie");
 const bookMovieRouter = require("./routes/bookMovie");
 const addCardDetailsRouter = require('./routes/addCardDetails');
 
+
 //use routes
 app.use('/api',customerRouter);
 app.use('/api',adminRouter);

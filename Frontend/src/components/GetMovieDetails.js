@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
-import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -51,7 +51,7 @@ onDelete = (movieID)=>{
   render() {
     return (
       <div>
-         <MovieMainNavBar/>
+         <AdminNavBar/>
       <div className='container'>
         
           <br/>
@@ -80,7 +80,7 @@ onDelete = (movieID)=>{
                      {this.state.movie.map((movie,index)=>(
                       <tr>
                           <th scope='row'>{index + 1}</th>
-                          <td><a href={`/specific/${movie._id}`} style ={{textDecoration:'none'}}> {movie.movieName}</a></td>
+                          <td>{movie.movieName}</td>
                           <td>{movie.timeSlot}</td>
                           <td>{movie.description}</td>
                           <td>{movie.cast}</td>
