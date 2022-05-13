@@ -25,7 +25,8 @@ onReadirect(id){
 //retrieve all movie details
 componentDidMount(){
     this.retrieveMovie();
-}    
+}   
+ 
 retrieveMovie(){
     axios.get("http://localhost:8070/api/movie/display").then(res=>{
         if(res.data.success){
