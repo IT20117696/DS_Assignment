@@ -40,6 +40,19 @@ router.post("/admin/signup", async (req, res) => {
         }
       });      
 
-
+//admin login 
+router.post('/admin/signin', async (req, res) => { 
+    try {
+        const {email, pwd} = req.body     
+        const Admin = await admin.findByCredentials(email, pwd)
+        const token = await Admin.generateAuthToken()
+        res.status(200).send({token: token, Admin: Admin})
+    
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+        console.log(error);
+      }
+    });
+        
  module.exports = router;
     
