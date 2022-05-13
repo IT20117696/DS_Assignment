@@ -21,7 +21,8 @@ export default class AddCardDetails extends Component {
       expirationMonth:"",
       expirationYear:"",
       amount:"",
-      totalAmount:""
+      totalAmount:"",
+      email:""
     }
   }
 
@@ -44,7 +45,7 @@ export default class AddCardDetails extends Component {
 
   onSubmit = (e)=>{
        e.preventDefault();
-       const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount} = this.state;
+       const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount,email} = this.state;
        const data = {
             cardMethod:cardMethod,
             cardNumber:cardNumber,
@@ -52,7 +53,8 @@ export default class AddCardDetails extends Component {
             cvv:cvv,
             expirationMonth:expirationMonth,
             expirationYear:expirationYear,
-            totalAmount:totalAmount
+            totalAmount:totalAmount,
+            email:email
     }
 
     console.log(data);
@@ -66,7 +68,8 @@ export default class AddCardDetails extends Component {
           cvv:"",
           expirationMonth:"",
           expirationYear:"",
-          totalAmount:""
+          totalAmount:"",
+          email:""
         });
       }
     }).catch(()=>{
@@ -86,7 +89,7 @@ export default class AddCardDetails extends Component {
                       <label style={{marginBottom:'5px',fontSize: 20, color: "#737CA1"}} className="form-label"><b> Your Total Amount : {this.state.amount}</b> </label>
  
              <div className="col-md-6" align="left">
-                <label style={{marginBottom:'2px'}}  className="form-label"  Required="required"><b>Card Method</b> </label>
+             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Method</span>
                   <select className="form-control" name="cardMethod"  value={this.state.cardMethod}
                        onChange={this.handleInputChange} maxLength ="1000" required >
                            <option value="">Select Method</option>
@@ -96,26 +99,26 @@ export default class AddCardDetails extends Component {
              </div>
         
             <div className="col-md-6" align="left">
-                <label style={{marginBottom:'2px'}} className="form-label"><b>Card Number </b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Number</span>
                 <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000" Required = "required" 
                          value={this.state.cardNumber } onChange={this.handleInputChange} /><br/>
             </div>
 
             <div className="col-md-6" align="left">
-             <label style={{marginBottom:'2px'}} className="form-label"><b>Card Holder Name</b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Holder Name </span>
              <input type="text" className="form-control" name="cardHolderName" placeholder="Enter Card Holder Name" Required = "required" 
               value={this.state.cardHolderName } onChange={this.handleInputChange} /><br/>
             </div>
 
             <div className="col-md-6" align="left">
-             <label style={{marginBottom:'2px'}} className="form-label"><b>CVV</b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
              <input type="number" className="form-control" name="cvv" placeholder="000" Required = "required" 
                  value={this.state.cvv } 
                  onChange={this.handleInputChange} /><br/>
             </div>
 
             <div className="col-md-6" align="left">
-               <label style={{marginBottom:'2px'}}  className="form-label"  Required="required"><b>Expiration Month</b> </label>
+             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Month</span>
                   <select className="form-control" name="expirationMonth"  value={this.state.expirationMonth}
                         onChange={this.handleInputChange} maxLength ="1000" required >
                           <option value="">Select Expiration Month</option>
@@ -135,21 +138,24 @@ export default class AddCardDetails extends Component {
             </div>
 
             <div className="col-md-6" align="left">
-                 <label style={{marginBottom:'2px'}} className="form-label"><b>Expiration Year</b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Year </span>
                  <input type="number" className="form-control" name="expirationYear" placeholder="0000" Required = "required" 
                        value={this.state.expirationYear } onChange={this.handleInputChange} />
             </div>
 
               <div className="col-md-6"  align="left">
+              <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Please Enter Total Amount  </span>
                  <input type="text"  style={{marginBottom:'5px'}} className="form-control" name="totalAmount" Required = "required" 
                        value={this.state.totalAmount } onChange={this.handleInputChange} />
-                       <div align="left">
-                          <span id="passwordHelpInline" class="form-text"> Please Enter Total Amount 
-                        </span>
-                      </div> 
-                   </div>
- 
-            <div align="right">
+              </div>
+
+                <div className="col-md-6" align="left">
+                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Email Address  </span>
+                 <input type="text" className="form-control" name="email" placeholder="Please Enter Email Address " Required = "required" 
+                     value={this.state.email } onChange={this.handleInputChange} />
+                </div>
+
+            <div align="right"><br/>
                <Button
                   onClick={this.onSubmit}
                   style={{ color:"white", background:"#08368b"}}

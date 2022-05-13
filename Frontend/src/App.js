@@ -18,10 +18,11 @@ function App(){
         <BrowserRouter>
             <Switch>
                 
-                {/* <Route path="/" component={MovieHomePage} exact/> */}
-                <Route path= "/" component={MovieDisplay} exact/>
+                <Route path="/" component={MovieHomePage} exact/>
+               
 
                 <div>
+                <Route path= "/dashboard" component={MovieDisplay} exact/>
                 <Route path= "/customer/signin" component={CustomerLogin}/>
                 <Route path = "/customer/signup" component={CustomerRegisteration}/>
                 <Route path = "/movie/add" component={AddMovie}/>      

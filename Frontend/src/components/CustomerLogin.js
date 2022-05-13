@@ -69,29 +69,31 @@ export default class CustomerLogin extends Component {
                     <form onSubmit={this.userLoginSubmit} name="form"> 
                       <div class="form-outline mb-4">  
                       <div className="col-md-9">
-                      <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
-                        <label class="form-label"><b>User Email Address </b></label>
-                          <input type="text" name="email" placeholder='Enter email here' class="form-control "
+                      <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
+                          USER EMAIL ADDRESS </span>
+                          <input type="text" name="email" placeholder='Enter Your Email' class="form-control "
                                   onChange={e=>this.setState({email:e.target.value})} required/>
                       </div>
                       </div>
 
                       <div class="form-outline mb-4" >
                         <div className="col-md-9">
-                        <i className="fa fa-key"> &nbsp;&nbsp;</i>    
-                        <label class="form-label"><b>PASSWORD</b></label>
-                        <input type="password" name="password" class="form-control " placeholder="Enter your Password" 
+                        <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                          PASSWORD</span>
+                        <input type="password" name="password" class="form-control " placeholder="Enter Your Password" 
                                 onChange={e=>this.setState({pwd:e.target.value})} required/> 
                       </div>
                     </div>
-               <Button 
-                  // href={`/bookmovie/add/${_id}`}
-                    type="submit" class="btn btn-primary">
-                  <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
+               
+                  <Button 
+                     href= "/dashboard"
+                     type="submit" class="btn btn-primary">
+                     <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
      
                 <div class="divider d-flex align-items-center my-4">
+                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> 
                       <center><label >Not Registered? &nbsp;&nbsp;</label>
-                      <a href='/customer/signup'>Sign Up</a></center>
+                      <a href='/customer/signup'>Sign Up</a></center></span>
                  </div>
                </form>   
              </div> 

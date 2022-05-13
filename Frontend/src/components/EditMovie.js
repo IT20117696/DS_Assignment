@@ -93,7 +93,7 @@ export default class EditMovie extends Component {
        
         <div>
         <div align="left">
-          <label style={{marginBottom:'5px'}} className="form-label"  Required="required"> Movie Name </label></div>
+        <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Movie Name </span></div>
           <input type="text" className="form-control" name="movieName" placeholder="Enter Movie Name" Required = "required"
            value={this.state.movieName}
            onChange={this.handleInputChange} />
@@ -101,7 +101,7 @@ export default class EditMovie extends Component {
 
          <div>
          <div align="left">
-          <label style={{marginBottom:'5px'}} className="form-label"  Required="required">Show Times </label></div>
+         <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Show Times </span></div>
           <select className="form-control" name="timeSlot"  value={this.state.timeSlot}
            onChange={this.handleInputChange} maxLength ="1000" required >
               <option value="">Select Show Times</option>
@@ -113,7 +113,7 @@ export default class EditMovie extends Component {
          </div>
         
          <div>
-         <label style={{marginBottom:'5px'}} className="form-label"  Required="required"> Movie Cast </label>
+         <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>  Movie Cast </span>
          <input type="date" className="form-control" name="cast" placeholder="Select Movie Cast Date" Required = "required"
            value={this.state.cast}
            onChange={this.handleInputChange} />
@@ -121,7 +121,7 @@ export default class EditMovie extends Component {
 
         <div>
         <div align="left">
-          <label style={{marginBottom:'5px'}} className="form-label"   Required="required"> Movie Description </label>
+        <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>  Movie Description </span>
           <textarea type="text" style={{marginBottom:'5px', height: '150px'}} className="form-control" name="description" placeholder="Enter Movie Description" Required = "required"
            value={this.state.description}
            onChange={this.handleInputChange} /></div>

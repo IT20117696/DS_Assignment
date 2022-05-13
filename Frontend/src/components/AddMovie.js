@@ -67,16 +67,16 @@ export default class AddMovie extends Component {
           <div class="card-header" style={{background: "#E3E4FA"}}><h2>Add New Movies</h2></div>
           <br/> 
           
-          <form className="row g-3" > 
+          <form className="row g-2" > 
       
            <div align="left">
-             <label style={{marginBottom:'5px'}} className="form-label"  Required="required"> Movie Name </label></div>
+           <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Movie Name </span></div>
              <input type="text" className="form-control" name="movieName" placeholder="Enter Movie Name" Required = "required"
               value={this.state.movieName}
               onChange={this.handleInputChange} />
 
             <div align="left">
-             <label style={{marginBottom:'5px'}} className="form-label"  Required="required">Show Times </label></div>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Show Times</span></div>
              <select className="form-control" name="timeSlot"  value={this.state.timeSlot}
               onChange={this.handleInputChange} maxLength ="1000" required >
                  <option value="">Select Show Times</option>
@@ -86,22 +86,22 @@ export default class AddMovie extends Component {
                  <option value="8.00 P.M - 10.30 P.M">8.00 P.M - 10.30 P.M</option>
              </select>
            
-            <div>
-            <label style={{marginBottom:'5px'}} className="form-label"  Required="required"> Movie Cast </label>
+             <div align="left">
+             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Movie Cast </span>
             <input type="date" className="form-control" name="cast" placeholder="Select Movie Cast Date" Required = "required"
               value={this.state.cast}
               onChange={this.handleInputChange} />
-            </div>
+             </div>
 
-           <div align="left">
-             <label style={{marginBottom:'5px'}} className="form-label"   Required="required"> Movie Description </label>
+            <div align="left">
+             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Movie Description </span>
              <textarea type="text" style={{marginBottom:'5px', height: '150px'}} className="form-control" name="description" placeholder="Enter Movie Description" Required = "required"
               value={this.state.description}
               onChange={this.handleInputChange} /></div>
 
             <div align="left">
             <FileBase64 type="file" name="banner" multiple={ false } onDone={({ base64 }) => this.setState({  banner: base64 })}/>
-            </div>
+            </div><br/>
 
             <button className="btn btn-primary" type="submit" style={{marginBottom:'5px'}} onClick={this.onSubmit}>
              &nbsp; Add Movie
@@ -109,7 +109,7 @@ export default class AddMovie extends Component {
 
           </form><br/>
           </div>
-          </div>
+          </div><br/><br/>
       </div>
       <Footer/>
       </div>

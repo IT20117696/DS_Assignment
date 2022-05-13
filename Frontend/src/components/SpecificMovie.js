@@ -42,7 +42,7 @@ export default class SpecificMovie extends Component {
                   fontFamily: 'Tomes New Roman'
                 }}
               > **- {movieName} -**
-              </div>
+              </div><br/>
              <img className="activator"  id="aimage" src={banner} width={350} />
              <br/><br/>
              

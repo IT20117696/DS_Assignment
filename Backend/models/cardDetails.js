@@ -33,7 +33,18 @@ const addCardDetailsSchema = new mongoose.Schema({
     totalAmount:{
         type:String,
         required:true,
-    }
+    },
+    email: {
+        type: String,
+        required: true,
+        lowercase: true,
+        trim: true,
+        validate(value) {
+          if (!validator.isEmail(value)) {
+            throw new Error("Please enter valid Email address");
+          }
+        },
+    },
 });
 
 const AddCardDetails = mongoose.model("Card Details",addCardDetailsSchema);

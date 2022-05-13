@@ -81,7 +81,7 @@ handleInputChange = (e)=>{
           <a style={{fontSize: 30, color: "#000080",fontFamily:'Monotype Corsiva'}}> <b><u>{movieName}</u></b></a>
      
           <div className="col-md-6" align="left">
-             <label style={{marginBottom:'5px'}} className="form-label"  Required="required"><b> Theaters </b></label>
+          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>  Theaters </span>
              <select className="form-control" name="theater"  value={this.state.theater}
               onChange={this.handleInputChange} maxLength ="1000" required >
                  <option value="">Select Thearter</option>
@@ -98,7 +98,7 @@ handleInputChange = (e)=>{
             </div>
          
             <div className="col-md-6" align="left">
-             <label style={{marginBottom:'5px'}}  className="form-label"  Required="required"><b>Book Times</b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Times</span>
              <select className="form-control" name="timeSlot"  value={this.state.timeSlot}
               onChange={this.handleInputChange} maxLength ="1000" required >
                  <option value="">Select Show Times</option>
@@ -110,14 +110,14 @@ handleInputChange = (e)=>{
             </div>
 
             <div className="col-md-6" align="left">
-            <label style={{marginBottom:'5px'}} className="form-label"  Required="required"><b>Book Date</b></label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Date</span>
             <input type="date" className="form-control" name="bookingDate" placeholder="Select Booking Date" Required = "required"
               value={this.state.bookingDate}
               onChange={this.handleInputChange} />
             </div>
          
             <div className="col-md-6" align="left">
-             <label style={{marginBottom:'5px'}} className="form-label"><b>No Of Tickects</b> </label>
+            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> No Of Tickects</span>
              <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
               value={this.state.noOfTickects } 
               onChange={this.handleInputChange} />
