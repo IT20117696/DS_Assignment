@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Button from "@material-ui/core/Button";
-import MovieMainNavBar from './MovieMainNavBar';
+import MainHomePageNavBar from './MainHomePageLayOut/MainHomePageNavBar';
 import Footer from './footer';
 
 export default class CustomerLogin extends Component {
@@ -51,7 +51,8 @@ export default class CustomerLogin extends Component {
     return (
 
     <div style={{ backgroundColor:"#2B3856" }} >
-     <MovieMainNavBar/><br/><br/><br/>
+     <MainHomePageNavBar/>
+     <br/><br/><br/>
      <div class="row d-flex align-items-center justify-content-center">
       <div style={{width: 900,background: "#CCCCFF",height:450}}><br/>
         <div class="card-body" > 

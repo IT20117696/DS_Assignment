@@ -3,6 +3,8 @@ import axios from 'axios';
 import FileBase64 from 'react-file-base64';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import Footer from './footer';
 
 toast.configure()
 
@@ -57,6 +59,8 @@ export default class AddMovie extends Component {
   
   render() {
     return (
+      <div>
+        <MovieMainNavBar/>
       <div align="center"><br/> <br/>     
          <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
          <div className="card-header py-3">
@@ -106,6 +110,8 @@ export default class AddMovie extends Component {
           </form><br/>
           </div>
           </div>
+      </div>
+      <Footer/>
       </div>
     )
   }

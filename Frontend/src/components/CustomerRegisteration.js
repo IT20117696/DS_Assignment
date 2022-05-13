@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import MovieMainNavBar from './MovieMainNavBar';
+import MainHomePageNavBar from './MainHomePageLayOut/MainHomePageNavBar';
 import Footer from './footer';
 import Button from "@material-ui/core/Button";
 
@@ -39,7 +39,8 @@ export default function CustomerRegisteration(){
 
     return (
     <div style={{ backgroundColor:"#2B3856" }} >
-       <MovieMainNavBar/><br/><br/>
+       <MainHomePageNavBar/>
+       <br/><br/>
        <div>
         <div class="row d-flex align-items-center justify-content-center">
           <div style={{width: 1000,background: "#CCCCFF",height:520}}>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import PaidIcon from '@mui/icons-material/Paid';
 import CancelIcon from '@mui/icons-material/Cancel';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

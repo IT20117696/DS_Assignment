@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

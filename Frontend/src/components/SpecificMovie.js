@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import CancelIcon from '@mui/icons-material/Cancel';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 
 export default class SpecificMovie extends Component {
@@ -33,9 +33,9 @@ export default class SpecificMovie extends Component {
     return (
       <div style={{ backgroundColor:"#2B3856" ,height:"1100px"}} >
          <MovieMainNavBar/>
-             <div align="center" ><br/><br/>
+           <div align="center" ><br/><br/>
              <Paper style={{textAlign:"center",borderRadius: 5,width:'570px',height:'900px'}}>
-             <div
+              <div
                 style={{
                   fontSize: 50,
                   color: "Black",

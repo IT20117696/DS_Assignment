@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import IconButton from '@material-ui/core/IconButton';
+import Button from "@material-ui/core/Button";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default class MovieMainNavBar extends Component {
     render(){
@@ -36,11 +38,45 @@ export default class MovieMainNavBar extends Component {
         <li class="nav-item">
           <a class="nav-link" href="#" style={{color: "#ffff"}}>Contact Us</a>
         </li>  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
-       
-      </ul>
+        </ul>
             <form class="d-flex"><br/>
             <input class="form-control mt-3" type="search" placeholder="Search" aria-label="Search"/> </form>  &nbsp;&nbsp;  &nbsp;&nbsp;
-            <i class="fa fa-search fa-lg  mt-3"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i> &nbsp;&nbsp;&nbsp;&nbsp;     
+            <i class="fa fa-search fa-lg  mt-3"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>   &nbsp;&nbsp;&nbsp;&nbsp;     
+           
+            <IconButton type="button" data-bs-toggle="modal"  data-bs-target="#exampleModal">
+            <i class="fa fa-user-circle fa-lg  mt-3 fa-2x"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>  &nbsp;&nbsp;&nbsp;&nbsp;     
+            </IconButton>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">LOGIN AS </h5>         
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          
+            <div class="modal-body" align="right">
+            <Button
+                  href='/'
+                  style={{ color:"white",background:"#990012" }}
+                  variant="outlined"
+                  startIcon={<AccountCircleIcon />}
+                >
+               Admin
+              </Button>   &nbsp;&nbsp;
+
+               <Button
+                  href='/customer/signin'
+                  style={{ color:"white",  background:"#08368b" }}
+                  variant="outlined"
+                  startIcon={<AccountCircleIcon />}
+                >
+               User
+              </Button>      
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>

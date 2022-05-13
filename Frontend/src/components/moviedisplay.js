@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Paginat from './paginationComponent';
 import Movie from './MainMoviePage';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 
 const MovieDisplay = () => {

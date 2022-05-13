@@ -4,7 +4,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@material-ui/icons/Edit';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from "@material-ui/core/Button";
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import CancelIcon from '@mui/icons-material/Cancel';
-import MovieMainNavBar from './MovieMainNavBar';
+import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 
 export default class BookMovie extends Component {
@@ -61,7 +61,7 @@ handleInputChange = (e)=>{
       window.location=(`/carddetails/add/${res.data.bookmovie._id}`);
       
       }
-    });
+    }); 
  } 
 }
   render() {
