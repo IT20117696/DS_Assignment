@@ -57,7 +57,7 @@ router.post("/customer/signup",  async (req, res) => {
   });
 
   //get customer profile
-  router.get("/profile", auth, async (req, res) => {
+  router.get("/customer/profile", auth, async (req, res) => {
     try {
       res.status(201)
       res.send({ success: "Customer Logged In", Cus: req.Cus });
@@ -69,7 +69,7 @@ router.post("/customer/signup",  async (req, res) => {
   });
 
   //log out profile
-  router.post("/logout", auth, async (req, res) => {
+  router.post("/customer/logout", auth, async (req, res) => {
     try {
       req.Cus.tokens = req.Cus.tokens.filter((token) => {
         return token.token !== req.token;
@@ -81,5 +81,50 @@ router.post("/customer/signup",  async (req, res) => {
       console.log(error.message);
     }   
  });
+
+ // update customer profile
+ router.put('/customer/update', auth, async (req, res) => {
+  try {
+    const {
+        customerName,
+        phone,
+        email,
+      } = req.body;
+      let Cus = await customer.findOne({email})
+      if (!Cus) {
+        throw new Error('There is no customer account')
+      }
+      const customerUpdate = await customer.findByIdAndUpdate(req.Cus.id, 
+        {
+          customerName:customerName,
+          phone:phone,
+          email:email
+        })
+
+        res.status(200).send({status: 'Customer Profile Updated', Cus: customerUpdate})
+
+      } catch (error) {
+        res.status(500).send({error: error.message})
+        console.log(error)
+      }
+    });
+
+ 
+    //delete customer account
+    router.delete("/customer/delete", auth, async (req, res) => {
+      try {
+        const Cus = await customer.findById(req.Cus.id);
+        if (!Cus) {
+          throw new Error("There is no customer to delete");
+        }
+        const deleteProfile = await customer.findByIdAndDelete(req.Cus.id);
+        res.status(200).send({ status: "Customer deleted", Cus: deleteProfile });
+      } catch (error) {
+        res
+          .status(500)
+          .send({ status: "error with /delete/:id", error: error.message });
+      }
+    });
+    
 
   module.exports = router;

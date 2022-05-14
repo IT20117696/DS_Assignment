@@ -14,6 +14,7 @@ import MovieHomePage from './components/MovieHomePage';
 import AdminLogin from './components/AdminLogin';
 import AdminRegisteration from './components/AdminRegisteration';
 import DisplayBookings from './components/DisplayBookings';
+import CustomerProfile from './components/CustomerProfile';
 
 function App(){
     return (
@@ -36,6 +37,7 @@ function App(){
                 <Route path = "/update/:movieID" component={EditMovie}/>
                 <Route path = "/bookMovie/add/:id" component={BookMovie}/>
                 <Route path = "/carddetails/add/:id" component={AddCardDetails}/>
+                <Route path = "/customer/profile" component={CustomerProfile}/>
            
                 </div> 
             </Switch>

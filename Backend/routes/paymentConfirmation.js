@@ -16,7 +16,7 @@ router.post('/moviepayment/sendemail',(req,res)=>{
             service: 'gmail',
             auth: {
               user: 'jayasinghesajani98@gmail.com',
-              pass: '121498s@'
+              pass: '*******'
             }
         });       
    
