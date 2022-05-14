@@ -5,12 +5,13 @@ const bcrypt = require("bcryptjs");
 
 const customerSchema = new mongoose.Schema({
     
-    customerName :{
+     customerName :{
         type : String,
         required : true
-    },
     
-    phone: {
+      },
+    
+      phone: {
         type: String,
         required: true,
       },

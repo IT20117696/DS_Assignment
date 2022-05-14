@@ -77,6 +77,7 @@ export default class MovieMainNavBar extends Component {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </nav>

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PersonIcon from '@material-ui/icons/Person';
+import IconButton from '@material-ui/core/IconButton';
 
 export default class MovieMainNavBar extends Component {
   render(){
@@ -36,11 +38,15 @@ export default class MovieMainNavBar extends Component {
           <a class="nav-link" href="#" style={{color: "#ffff"}}>Contact Us</a>
         </li>  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 
         
-    </ul>
+         </ul>
             <form class="d-flex"><br/>
             <input class="form-control mt-3" type="search" placeholder="Search" aria-label="Search"/> </form>  &nbsp;&nbsp;  &nbsp;&nbsp;
             <i class="fa fa-search fa-lg  mt-3"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>   &nbsp;&nbsp;&nbsp;&nbsp;     
-  
+           
+            <IconButton aria-label="profile" href="/customer/profile" style={{color: "#FFFFFF"}} >
+            <PersonIcon fontSize="large" />
+            </IconButton> 
+
       </div>
     </div>
   </nav>
