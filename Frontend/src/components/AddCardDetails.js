@@ -5,10 +5,6 @@ import PaidIcon from '@mui/icons-material/Paid';
 import CancelIcon from '@mui/icons-material/Cancel';
 import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-toast.configure()
 
 export default class AddCardDetails extends Component {
   constructor(props){
@@ -22,7 +18,12 @@ export default class AddCardDetails extends Component {
       expirationYear:"",
       amount:"",
       totalAmount:"",
-      email:""
+      email:"",
+      name:"",
+      id:"",
+      movieName:"",
+      theater:"",
+      date:""
     }
   }
 
@@ -35,17 +36,40 @@ export default class AddCardDetails extends Component {
   }
 
   componentDidMount(){
+     this.getUserDetails();
      const id= this.props.match.params.id;
      axios.get(`http://localhost:8070/api/carddetails/display/${id}`).then((res)=>{
          this.setState({
-             amount:res.data.selectedBookmovie.amount
+             amount:res.data.selectedBookmovie.amount,
+             id:res.data.selectedBookmovie._id,
+             movieName:res.data.selectedBookmovie.movieName,
+             theater:res.data.selectedBookmovie.theater,
+             date:res.data.selectedBookmovie.bookingDate,
         })
      })
   }
 
+  getUserDetails(){
+    const config = {
+      headers:{
+        Authorization:localStorage.getItem("Authorization")
+      }
+    }
+    axios.get(`http://localhost:8070/api/profile`,config).then((res)=>{
+    // console.log(res.data.Customer.email)
+    if(res.data.success){
+      this.setState({
+        email:res.data.Customer.email,
+        name:res.data.Customer.customerName,
+      })
+    }
+    console.log(this.state)
+    })
+  }
+
   onSubmit = (e)=>{
        e.preventDefault();
-       const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount,email} = this.state;
+       const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount} = this.state;
        const data = {
             cardMethod:cardMethod,
             cardNumber:cardNumber,
@@ -54,13 +78,11 @@ export default class AddCardDetails extends Component {
             expirationMonth:expirationMonth,
             expirationYear:expirationYear,
             totalAmount:totalAmount,
-            email:email
     }
 
     console.log(data);
     axios.post("http://localhost:8070/api/carddetails/add",data).then((res)=>{
     if(res.data.success){
-      toast.success('Cart Details Added Successfully',{position:toast.POSITION.TOP_CENTER});
         this.setState({
           cardMethod:"",
           cardNumber:"",
@@ -69,12 +91,27 @@ export default class AddCardDetails extends Component {
           expirationMonth:"",
           expirationYear:"",
           totalAmount:"",
-          email:""
+
         });
       }
-    }).catch(()=>{
-      toast.success('Cart Details Added UnSuccessfully',{position:toast.POSITION.TOP_CENTER});
-     });
+    })
+    const data2 ={
+      reciverMail:this.state.email, 
+      senderMail:"jayasinghesajsani98@gmail.com",
+      reciverName:this.state.name, 
+      reservationid:this.state.id,
+      movieName:this.state.movieName,
+      theater:this.state.theater,
+      date:this.state.date
+    }
+    axios.post("http://localhost:8070/api/moviepayment/sendemail",data2).then((res)=>{
+      if(res.status){
+        alert("Send successfull!!")
+      }else{
+        alert("Error")
+      }
+    })
+
   }
 
   render() {
@@ -149,11 +186,6 @@ export default class AddCardDetails extends Component {
                        value={this.state.totalAmount } onChange={this.handleInputChange} />
               </div>
 
-                <div className="col-md-6" align="left">
-                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Email Address  </span>
-                 <input type="text" className="form-control" name="email" placeholder="Please Enter Email Address " Required = "required" 
-                     value={this.state.email } onChange={this.handleInputChange} />
-                </div>
 
             <div align="right"><br/>
                <Button

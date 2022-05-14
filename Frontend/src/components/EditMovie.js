@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
-import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Footer from './footer';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -81,7 +81,7 @@ export default class EditMovie extends Component {
   render() {
     return (
       <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
-         <MovieMainNavBar/>
+         <AdminNavBar/>
       <div align="center"> <br/>
 
       <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>

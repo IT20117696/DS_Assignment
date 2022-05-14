@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
-import MuiAlert from '@material-ui/lab/Alert';
+// import MuiAlert from '@material-ui/lab/Alert';
 
-const Alert = (props) => {
- return <MuiAlert elevation={6} variant="filled" {...props} style={{ textAlign: 'center' }} />;
- }
+// const Alert = (props) => {
+//  return <MuiAlert elevation={6} variant="filled" {...props} style={{ textAlign: 'center' }} />;
+//  }
  const Movie = ({ movieID,
                   movieName,
                   banner, 

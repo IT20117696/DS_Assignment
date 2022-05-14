@@ -64,7 +64,7 @@ export default class AdminLogin extends Component {
                </div>
               
                 <div class="col-md-7 col-lg-5 col-xl-6 offset-xl-1"><br/>
-                    <form onSubmit={this.userLoginSubmit} name="form"> 
+                    <form onSubmit={this.AdminLoginSubmit} name="form"> 
                     <h2><u><b>ADMIN&nbsp;&nbsp;LOGIN</b></u></h2><br/>
                       <div class="form-outline mb-4">  
                       <div className="col-md-9">

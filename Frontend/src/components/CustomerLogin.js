@@ -30,7 +30,9 @@ export default class CustomerLogin extends Component {
            this.setState({
                token:res.data.token
            })
-           localStorage.setItem("Authorization",res.data.token)
+           console.log(this.state.token)
+           localStorage.setItem("Authorization", res.data.token)
+           window.location = "/dashboard"
            alert('Login Successfull!!');
        })
        .catch((err)=>{
@@ -51,8 +53,7 @@ export default class CustomerLogin extends Component {
     return (
 
     <div style={{ backgroundColor:"#2B3856" }} >
-     <MainHomePageNavBar/>
-     <br/><br/><br/>
+     <MainHomePageNavBar/> <br/><br/><br/>
      <div class="row d-flex align-items-center justify-content-center">
       <div style={{width: 900,background: "#CCCCFF",height:450}}><br/>
         <div class="card-body" > 
@@ -60,41 +61,44 @@ export default class CustomerLogin extends Component {
            <div class="row d-flex align-items-center justify-content-center h-100">      
              
              <div class="col-md-8 col-lg-7 col-xl-6"> 
-               <img src="https://ey5me.csb.app/happy.svg" class="img-fluid" alt="Phone image"/>  <br/><br/>
-                <h2>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <u><b>CUSTOMER&nbsp;&nbsp;LOGIN</b></u></h2> 
+               <img src="https://ey5me.csb.app/happy.svg" class="img-fluid" alt="Phone image"/>  <br/>
+                  <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <u><b>CUSTOMER&nbsp;&nbsp;LOGIN</b></u></h2> 
               </div>
               
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                    <form onSubmit={this.userLoginSubmit} name="form"> 
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">    
+                  <form onSubmit={this.CustomerLoginSubmit} name="form"> 
+                      
                       <div class="form-outline mb-4">  
-                      <div className="col-md-9">
-                      <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
-                          USER EMAIL ADDRESS </span>
-                          <input type="text" name="email" placeholder='Enter Your Email' class="form-control "
+                        <div className="col-md-9">
+                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-lock"> &nbsp;&nbsp;</i>            
+                             USER EMAIL ADDRESS </span>
+                            <input type="text" name="email" placeholder='Enter Your Email' class="form-control "
                                   onChange={e=>this.setState({email:e.target.value})} required/>
-                      </div>
+                         </div>
                       </div>
 
                       <div class="form-outline mb-4" >
-                        <div className="col-md-9">
-                        <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-key"> &nbsp;&nbsp;</i>    
-                          PASSWORD</span>
-                        <input type="password" name="password" class="form-control " placeholder="Enter Your Password" 
+                         <div className="col-md-9">
+                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-key"> &nbsp;&nbsp;</i>    
+                            PASSWORD</span>
+                             <input type="password" name="password" class="form-control " placeholder="Enter Your Password" 
                                 onChange={e=>this.setState({pwd:e.target.value})} required/> 
+                        </div>
                       </div>
-                    </div>
                
                   <Button 
-                     href= "/dashboard"
+                    //  href= "/dashboard"
                      type="submit" class="btn btn-primary">
                      <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
      
                 <div class="divider d-flex align-items-center my-4">
-                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> 
+                  <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> 
                       <center><label >Not Registered? &nbsp;&nbsp;</label>
-                      <a href='/customer/signup'>Sign Up</a></center></span>
+                      <a href='/customer/signup'>Sign Up</a></center>
+                      </span>
                  </div>
+               
                </form>   
              </div> 
            </div>
