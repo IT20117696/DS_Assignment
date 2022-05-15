@@ -90,10 +90,13 @@ router.post("/customer/signup",  async (req, res) => {
         phone,
         email,
       } = req.body;
-      let Cus = await customer.findOne({email})
-      if (!Cus) {
+
+    let Cus = await customer.findOne({email})
+      
+    if (!Cus) {
         throw new Error('There is no customer account')
       }
+
       const customerUpdate = await customer.findByIdAndUpdate(req.Cus.id, 
         {
           customerName:customerName,

@@ -51,11 +51,11 @@ handleSearchArea = (e)=>{
       <div>
          <AdminNavBar/>
          <div className='container'>
-         <br/><br/>
+            <br/><br/>
 
-         <div className="col-md-3" >
-         <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} />
-         </div><br/>
+          <div className="col-md-3" >
+            <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} />
+               </div><br/>
 
          <table class = "table" >
               <thead>

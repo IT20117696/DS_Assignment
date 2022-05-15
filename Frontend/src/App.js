@@ -15,6 +15,9 @@ import AdminLogin from './components/AdminLogin';
 import AdminRegisteration from './components/AdminRegisteration';
 import DisplayBookings from './components/DisplayBookings';
 import CustomerProfile from './components/CustomerProfile';
+import CustomerUpdateProfile from './components/CustomerUpdateProfile';
+import AdminProfile from './components/AdminProfile';
+// import AdminUpdateProfile from './components/AdminUpdateProfile';
 
 function App(){
     return (
@@ -38,6 +41,9 @@ function App(){
                 <Route path = "/bookMovie/add/:id" component={BookMovie}/>
                 <Route path = "/carddetails/add/:id" component={AddCardDetails}/>
                 <Route path = "/customer/profile" component={CustomerProfile}/>
+                <Route path = "/customer/update" component={CustomerUpdateProfile}/>
+                <Route path = "/admin/profile" component={AdminProfile}/>
+                {/* <Route path = "/admin/update" component={AdminUpdateProfile}/> */}
            
                 </div> 
             </Switch>

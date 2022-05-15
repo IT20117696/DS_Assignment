@@ -97,7 +97,7 @@ export default class AddCardDetails extends Component {
     })
     const data2 ={
       reciverMail:this.state.email, 
-      senderMail:"jayasinghesajsani98@gmail.com",
+      senderMail:"jayasinghesajani98@gmail.com",
       reciverName:this.state.name, 
       reservationid:this.state.id,
       movieName:this.state.movieName,
@@ -117,47 +117,46 @@ export default class AddCardDetails extends Component {
   render() {
     return (
       <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
-       <MovieMainNavBar/>
-         <div align="center">  <br/> <br/><br/>
-           <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
-             <div className="card-header py-3">
-               <div class="card-header" style={{background: "#E3E4FA"}}><h2>Add Card Details</h2></div><br/>
-                  <form className="row g-2" > 
-                      <label style={{marginBottom:'5px',fontSize: 20, color: "#737CA1"}} className="form-label"><b> Your Total Amount : {this.state.amount}</b> </label>
+         <MovieMainNavBar/>
+            <div align="center">  <br/> <br/><br/>
+              <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
+                 <div className="card-header py-3">
+                   <div class="card-header" style={{background: "#E3E4FA"}}><h2>Add Card Details</h2></div><br/>
+                      <form className="row g-2" > 
+                         <label style={{marginBottom:'5px',fontSize: 20, color: "#737CA1"}} className="form-label"><b> Your Total Amount : {this.state.amount}</b> </label>
  
-             <div className="col-md-6" align="left">
-             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Method</span>
-                  <select className="form-control" name="cardMethod"  value={this.state.cardMethod}
-                       onChange={this.handleInputChange} maxLength ="1000" required >
-                           <option value="">Select Method</option>
-                           <option value="Credit Card">Credit Card</option>
-                           <option value="Debit Card">Debit Card</option>    
-                   </select>
-             </div>
+                    <div className="col-md-6" align="left">
+                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Method</span>
+             <select className="form-control" name="cardMethod"  value={this.state.cardMethod}
+          onChange={this.handleInputChange} maxLength ="1000" required >
+                      <option value="">Select Method</option>
+                      <option value="Credit Card">Credit Card</option>
+                      <option value="Debit Card">Debit Card</option>    
+                          </select>
+                              </div>
         
-            <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Number</span>
-                <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000" Required = "required" 
-                         value={this.state.cardNumber } onChange={this.handleInputChange} /><br/>
+                              <div className="col-md-6" align="left">
+                         <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Number</span>
+                     <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000" 
+                 value={this.state.cardNumber } onChange={this.handleInputChange} required/><br/>
             </div>
 
             <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Holder Name </span>
-             <input type="text" className="form-control" name="cardHolderName" placeholder="Enter Card Holder Name" Required = "required" 
-              value={this.state.cardHolderName } onChange={this.handleInputChange} /><br/>
-            </div>
+               <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Holder Name </span>
+                 <input type="text" className="form-control" name="cardHolderName" placeholder="Enter Card Holder Name"  
+                   value={this.state.cardHolderName } onChange={this.handleInputChange} required/><br/>
+                     </div>
 
-            <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
-             <input type="number" className="form-control" name="cvv" placeholder="000" Required = "required" 
-                 value={this.state.cvv } 
-                 onChange={this.handleInputChange} /><br/>
-            </div>
+                        <div className="col-md-6" align="left">
+                           <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
+                               <input type="number" className="form-control" name="cvv" placeholder="000"
+                                   value={this.state.cvv }  onChange={this.handleInputChange}required /><br/>
+                                     </div>
 
-            <div className="col-md-6" align="left">
-             <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Month</span>
-                  <select className="form-control" name="expirationMonth"  value={this.state.expirationMonth}
-                        onChange={this.handleInputChange} maxLength ="1000" required >
+                                      <div className="col-md-6" align="left">
+                               <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Month</span>
+                          <select className="form-control" name="expirationMonth" value={this.state.expirationMonth}
+                       onChange={this.handleInputChange} maxLength ="1000" required >
                           <option value="">Select Expiration Month</option>
                           <option value="Jan">Jan</option>
                           <option value="Feb">Feb</option>    
@@ -171,20 +170,20 @@ export default class AddCardDetails extends Component {
                           <option value="Oct">Oct</option>    
                           <option value="Nov">Nov</option>
                           <option value="Dec">Dec</option>
-                   </select>
-            </div>
+                        </select>
+                          </div>
 
-            <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Year </span>
-                 <input type="number" className="form-control" name="expirationYear" placeholder="0000" Required = "required" 
-                       value={this.state.expirationYear } onChange={this.handleInputChange} />
+                          <div className="col-md-6" align="left">
+                      <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Year </span>
+                  <input type="number" className="form-control" name="expirationYear" placeholder="0000" Required = "required" 
+               value={this.state.expirationYear } onChange={this.handleInputChange} />
             </div>
 
               <div className="col-md-6"  align="left">
-              <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Please Enter Total Amount  </span>
-                 <input type="text"  style={{marginBottom:'5px'}} className="form-control" name="totalAmount" Required = "required" 
+                 <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Please Enter Total Amount  </span>
+                    <input type="text"  style={{marginBottom:'5px'}} className="form-control" name="totalAmount" Required = "required" 
                        value={this.state.totalAmount } onChange={this.handleInputChange} />
-              </div>
+                         </div>
 
 
             <div align="right"><br/>
@@ -204,14 +203,15 @@ export default class AddCardDetails extends Component {
                   startIcon={<CancelIcon />}
                 >
                  Cancel 
-                  </Button> <br/>
+                       </Button> 
+                    <br/>
                 </div>            
             </form>
-           </div>
-         </div><br/><br/><br/><br/><br/>
-         <Footer/>
-       </div>
-     </div>  
+                </div>
+                  </div><br/><br/><br/><br/><br/>
+                     <Footer/>
+                        </div>
+                          </div>  
     )
   }
 }

@@ -45,12 +45,12 @@ const adminSchema = new mongoose.Schema({
 
 // @Action - encrypt the password
 adminSchema.pre('save', async function(next){
-    if(!this.isModified("pwd")){
-        next();
-    }
-    const salt = await bcrypt.genSalt(8);
-    this.pwd = await bcrypt.hash(this.pwd, salt);
-  });
+  if(!this.isModified("pwd")){
+    next();
+  }
+  const salt = await bcrypt.genSalt(8);
+  this.pwd = await bcrypt.hash(this.pwd, salt);
+});
 
 
 // @Action - Get auth token

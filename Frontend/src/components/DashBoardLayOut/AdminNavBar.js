@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PersonIcon from '@material-ui/icons/Person';
+import IconButton from '@material-ui/core/IconButton';
 
 export default class AdminNavBar extends Component {
   render(){
@@ -35,7 +37,10 @@ export default class AdminNavBar extends Component {
         <li class="nav-item">
           <a class="nav-link" href="/bookmovie/display" style={{color: "#ffff"}}>Booking Details</a>
         </li>  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; 
-        <i class="fa fa-user-circle fa-lg  mt-3 fa-3x"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i> 
+        {/* <i class="fa fa-user-circle fa-lg  mt-3 fa-3x"  aria-hidden="true" type="submit" style={{color: "#ffff"}} ></i>  */}
+        <IconButton aria-label="profile" href="/admin/profile" style={{color: "#FFFFFF"}} >
+            <PersonIcon fontSize="large" />
+            </IconButton> 
         </ul>
       </div>
     </div>

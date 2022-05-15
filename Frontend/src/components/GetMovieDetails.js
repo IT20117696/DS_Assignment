@@ -52,20 +52,17 @@ onDelete = (movieID)=>{
     return (
       <div>
          <AdminNavBar/>
-      <div className='container'>
-        
-          <br/>
-          <div align="right">
-          <br/>
-          <IconButton aria-label="delete" size="small"
+           <div className='container'><br/>
+              <div align="right">
+                  <br/>
+               <IconButton aria-label="delete" size="small"
                       style={{background: "#033E3E"}} href={`/movie/add`}>
-          <VideoCallIcon fontSize="large"  style={{color: "white"}}/>
-          </IconButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
-          <a><b>ADD MOVIES</b></a>
-
-          <br/><br/><br/>
-          </div>
-          <table class = "table" >
+                   <VideoCallIcon fontSize="large"  style={{color: "white"}}/>
+               </IconButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+                         <a><b>ADD MOVIES</b></a>
+                            <br/><br/><br/>
+                               </div>
+                <table class = "table" >
               <thead>
                   <tr bgcolor="#BCC6CC">
                       <th scope='col'>No</th>

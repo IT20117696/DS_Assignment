@@ -70,37 +70,36 @@ handleInputChange = (e)=>{
     
     return (
       <div>
-      <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
-       <MovieMainNavBar/>
-        <div align="center"> <br/><br/><br/><br/><br/>
-          <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
-            <div className="card-header mt-2">
-             <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div><br/>
+         <div style={{ backgroundColor:"#2B3856" ,height:"900px"}} >
+           <MovieMainNavBar/>
+             <div align="center"> <br/><br/><br/><br/><br/>
+                <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
+                  <div className="card-header mt-2">
+                    <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div><br/>
 
-          <form className="row g-3" > 
-          <a style={{fontSize: 30, color: "#000080",fontFamily:'Monotype Corsiva'}}> <b><u>{movieName}</u></b></a>
-     
-          <div className="col-md-6" align="left">
+                    <form className="row g-3" > 
+                <a style={{fontSize: 30, color: "#000080",fontFamily:'Monotype Corsiva'}}> <b><u>{movieName}</u></b></a>
+             <div className="col-md-6" align="left">
           <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>  Theaters </span>
              <select className="form-control" name="theater"  value={this.state.theater}
-              onChange={this.handleInputChange} maxLength ="1000" required >
-                 <option value="">Select Thearter</option>
-                 <option value="SkyLights 3D Cinema">SkyLights 3D Cinema</option>
-                 <option value="Liberty By Scope Cinemas">Liberty By Scope Cinemas</option>    
-                 <option value="Eros Cinema">Eros Cinema</option>
-                 <option value="Majestic Cineplex">Majestic Cineplex</option>
-                 <option value="Cine City">Cine City</option>
-                 <option value="PVR Cinemas">PVR Cinemas</option>
-                 <option value="Scope Cinemas - CCC">Scope Cinemas - CCC</option>
-                 <option value="Ricky Cinema">Ricky Cinema</option>
-                 <option value="Savoy Premiere (Roxy)">Savoy Premiere (Roxy)</option>
-             </select>
+                 onChange={this.handleInputChange} maxLength ="1000" required >
+                      <option value="">Select Thearter</option>
+                      <option value="SkyLights 3D Cinema">SkyLights 3D Cinema</option>
+                      <option value="Liberty By Scope Cinemas">Liberty By Scope Cinemas</option>    
+                      <option value="Eros Cinema">Eros Cinema</option>
+                      <option value="Majestic Cineplex">Majestic Cineplex</option>
+                      <option value="Cine City">Cine City</option>
+                      <option value="PVR Cinemas">PVR Cinemas</option>
+                      <option value="Scope Cinemas - CCC">Scope Cinemas - CCC</option>
+                      <option value="Ricky Cinema">Ricky Cinema</option>
+                      <option value="Savoy Premiere (Roxy)">Savoy Premiere (Roxy)</option>
+                </select>
             </div>
          
-            <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Times</span>
+                     <div className="col-md-6" align="left">
+                  <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Times</span>
              <select className="form-control" name="timeSlot"  value={this.state.timeSlot}
-              onChange={this.handleInputChange} maxLength ="1000" required >
+                 onChange={this.handleInputChange} maxLength ="1000" required >
                  <option value="">Select Show Times</option>
                  <option value="10.30 A.M - 1.00 P.M">10.30 A.M - 1.00 P.M</option>
                  <option value="2.00 P.M - 4.30 P.M">2.00 P.M - 4.30 P.M</option>    
@@ -110,45 +109,45 @@ handleInputChange = (e)=>{
             </div>
 
             <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Date</span>
-            <input type="date" className="form-control" name="bookingDate" placeholder="Select Booking Date" Required = "required"
-              value={this.state.bookingDate}
-              onChange={this.handleInputChange} />
-            </div>
+                <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Book Date</span>
+                    <input type="date" className="form-control" name="bookingDate" placeholder="Select Booking Date" Required = "required"
+                        value={this.state.bookingDate} onChange={this.handleInputChange} />
+                           </div>
          
-            <div className="col-md-6" align="left">
-            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> No Of Tickects</span>
-             <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
-              value={this.state.noOfTickects } 
-              onChange={this.handleInputChange} />
-                 <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
-            </div><br/>
+                            <div className="col-md-6" align="left">
+                         <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> No Of Tickects</span>
+                     <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
+                        value={this.state.noOfTickects } 
+                        onChange={this.handleInputChange} />
+                         <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
+                             </div><br/>
 
-            <div align="right"><br/>
-            <Button
-                  onClick={this.onSubmit}
-                  style={{ color:"white", background:"#08368b"}}
-                  variant="outlined"
-                  startIcon={<BookmarkAddedIcon />}
-                >
-                Book Movie
-              </Button> &nbsp;&nbsp; &nbsp;&nbsp;
-              <Button
-                  href='/'
-                  style={{ color:"white", background:"#A70D2A" }}
-                  variant="outlined"
-                  startIcon={<CancelIcon />}
-                >
-                 Cancel Booking
-                  </Button> <br/> <br/>
-                </div>            
-               </form>
-              </div>
-            </div>
-           </div>
-         </div>  
-       <Footer/>
-      </div> 
+                                 <div align="right"><br/>
+                                      <Button
+                                            onClick={this.onSubmit}
+                                            style={{ color:"white", background:"#08368b"}}
+                                            variant="outlined"
+                                            startIcon={<BookmarkAddedIcon />}
+                                          >
+                                          Book Movie
+                                        </Button> &nbsp;&nbsp; &nbsp;&nbsp;
+
+                                        <Button
+                                              href='/'
+                                              style={{ color:"white", background:"#A70D2A" }}
+                                              variant="outlined"
+                                              startIcon={<CancelIcon />}
+                                            >
+                                            Cancel Booking
+                                              </Button> <br/> <br/>
+                        </div>            
+                     </form>
+                  </div>
+               </div>
+             </div>
+           </div>  
+        <Footer/>
+    </div> 
     )
   }
 }

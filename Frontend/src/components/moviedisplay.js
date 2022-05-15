@@ -39,14 +39,14 @@ const MovieDisplay = () => {
  }
  return(
     <div>
-    <MovieMainNavBar/>
-    <div style={{ backgroundColor:"#0C090A" ,height:"1400px"}} >
-    <br/><br/>
-    <div className="container" align="center">
+      <MovieMainNavBar/>
+         <div style={{ backgroundColor:"#0C090A" ,height:"1400px"}} >
+             <br/><br/>
+                <div className="container" align="center">
   
-     <div className="row" style={{ paddingTop: 15 }}>
-     {currentPost.map((movie) => (
-     <div key={movie._id} className="col-lg-3 col-md-6">
+              <div className="row" style={{ paddingTop: 15 }}>
+          {currentPost.map((movie) => (
+      <div key={movie._id} className="col-lg-3 col-md-6">
        <div className="ui link cards"><br/><br/>
          <Movie
            key={movie._id}
@@ -56,19 +56,19 @@ const MovieDisplay = () => {
            cast={movie.cast}
          />
      </div>
-     </div>
-     ))}
+  </div>
+ ))}
    </div>
-   <br/>
-   <div className="d-flex justify-content-center customPagination" >
-   <Paginat
-       postPerPage={postPerPage}
-       totalPosts={movie.length}
-       paginate={paginate}/>
-   </div>
- </div>
-</div>
-<Footer/>
+      <br/>
+         <div className="d-flex justify-content-center customPagination" >
+       <Paginat
+            postPerPage={postPerPage}
+            totalPosts={movie.length}
+            paginate={paginate}/>
+        </div>
+      </div>
+    </div>
+  <Footer/>
 </div>
  )
 }

@@ -43,8 +43,8 @@ export default class SpecificMovie extends Component {
                 }}
               > **- {movieName} -**
               </div><br/>
-             <img className="activator"  id="aimage" src={banner} width={350} />
-             <br/><br/>
+                <img className="activator"  id="aimage" src={banner} width={350} />
+                <br/><br/>
              
              <Button
                   href={`/bookmovie/add/${_id}`}

@@ -19,7 +19,7 @@ export default class MovieMainNavBar extends Component {
        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
 
        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/" style={{color: "#ffff"}}>Dashboard</a>
+          <a class="nav-link" aria-current="page" href="/dashboard" style={{color: "#ffff"}}>Dashboard</a>
         </li> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
 
         <li class="nav-item">
