@@ -75,7 +75,7 @@ handleInputChange = (e)=>{
              <div align="center"> <br/><br/><br/><br/><br/>
                 <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
                   <div className="card-header mt-2">
-                    <div class="card-header" style={{background: "#E3E4FA"}}><h2>Cart Details</h2></div><br/>
+                    <div class="card-header" style={{background: "#E3E4FA"}}><h2>BOOK MOVIE</h2></div><br/>
 
                     <form className="row g-3" > 
                 <a style={{fontSize: 30, color: "#000080",fontFamily:'Monotype Corsiva'}}> <b><u>{movieName}</u></b></a>
