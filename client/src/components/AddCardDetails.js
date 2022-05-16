@@ -175,8 +175,17 @@ export default class AddCardDetails extends Component {
 
                           <div className="col-md-6" align="left">
                       <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Expiration Year </span>
-                  <input type="number" className="form-control" name="expirationYear" placeholder="0000" Required = "required" 
-               value={this.state.expirationYear } onChange={this.handleInputChange} />
+                 <select className="form-control" name="expirationYear" value={this.state.expirationYear}
+                       onChange={this.handleInputChange} maxLength ="1000" required >
+                          <option value="">Select Expiration Year</option>
+                          <option value="2022">2022</option>
+                          <option value="2023">2023</option>    
+                          <option value="2024">2024</option>
+                          <option value="2025">2025</option>
+                          <option value="2026">2026</option>
+                          <option value="2027">2027</option>    
+                          <option value="2028">2028</option>
+                        </select>
             </div>
 
               <div className="col-md-6"  align="left">
