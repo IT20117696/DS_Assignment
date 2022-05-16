@@ -67,7 +67,7 @@ export default class AddCardDetails extends Component {
     })
   }
 
-  onSubmit = (e)=>{
+  sendData = (e)=>{
        e.preventDefault();
        const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount} = this.state;
        const data = {
@@ -128,7 +128,7 @@ export default class AddCardDetails extends Component {
                     <div className="col-md-6" align="left">
                 <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Method</span>
              <select className="form-control" name="cardMethod"  value={this.state.cardMethod}
-          onChange={this.handleInputChange} maxLength ="1000" required >
+          onChange={this.handleInputChange} maxLength ="1000" Required = "required">
                       <option value="">Select Method</option>
                       <option value="Credit Card">Credit Card</option>
                       <option value="Debit Card">Debit Card</option>    
@@ -137,7 +137,7 @@ export default class AddCardDetails extends Component {
         
                               <div className="col-md-6" align="left">
                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Number</span>
-                     <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000" 
+                     <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000"
                  value={this.state.cardNumber } onChange={this.handleInputChange} required/><br/>
             </div>
 
@@ -149,7 +149,7 @@ export default class AddCardDetails extends Component {
 
                         <div className="col-md-6" align="left">
                            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
-                               <input type="number" className="form-control" name="cvv" placeholder="000"
+                               <input type="number" className="form-control" name="cvv" placeholder="000" 
                                    value={this.state.cvv }  onChange={this.handleInputChange}required /><br/>
                                      </div>
 
@@ -197,7 +197,8 @@ export default class AddCardDetails extends Component {
 
             <div align="right"><br/>
                <Button
-                  onClick={this.onSubmit}
+                  // onClick={this.onSubmit}
+                  type="submit"
                   style={{ color:"white", background:"#08368b"}}
                   variant="outlined"
                   startIcon={<PaidIcon />}
