@@ -114,7 +114,7 @@ return (
                     <hr/>
                 <div class="row">
              <div class="col-sm-3">
-          <h6 class="mb-0"><b>Phone</b></h6>
+          <h6 class="mb-0"><b>Phone Number</b></h6>
               </div>
                   <div class="col-sm-9 text-secondary">
                       <b>{phone}</b>

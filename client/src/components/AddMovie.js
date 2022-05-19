@@ -94,8 +94,7 @@ export default class AddMovie extends Component {
                          <div align="left">
                       <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> Movie Description </span>
                   <textarea type="text" style={{marginBottom:'5px', height: '150px'}} className="form-control" name="description" placeholder="Enter Movie Description" Required = "required"
-              value={this.state.description}  onChange={this.handleInputChange} /></div>
-
+               value={this.state.description}  onChange={this.handleInputChange} /></div>
             <div align="left">
                <FileBase64 type="file" name="banner" multiple={ false } onDone={({ base64 }) => this.setState({  banner: base64 })}/>
                   </div><br/>
