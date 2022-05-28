@@ -42,6 +42,7 @@ const movieRouter = require("./routes/movie");
 const bookMovieRouter = require("./routes/bookMovie");
 const addCardDetailsRouter = require('./routes/addCardDetails');
 const paymentRouter = require('./routes/paymentConfirmation');
+const smsRoutes = require("./routes/smsRoutes");
 
 //use routes
 app.use('/api',customerRouter);
@@ -49,7 +50,8 @@ app.use('/api',adminRouter);
 app.use('/api',movieRouter);
 app.use('/api',bookMovieRouter);
 app.use('/api',addCardDetailsRouter);
-app.use('/api',paymentRouter)
+app.use('/api',paymentRouter);
+app.use("/smsroute",smsRoutes);
 
 app.listen(PORT,()=>{
     console.log(`App is running on on port number: ${PORT}`)
