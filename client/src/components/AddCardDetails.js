@@ -149,7 +149,7 @@ export default class AddCardDetails extends Component {
 
                         <div className="col-md-6" align="left">
                            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
-                               <input type="number" className="form-control" name="cvv" placeholder="000" 
+                               <input type="passowrd" className="form-control" name="cvv" placeholder="000" 
                                    value={this.state.cvv }  onChange={this.handleInputChange}required /><br/>
                                      </div>
 
