@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
 import Footer from './footer';
 import UpdateProfile from './CustomerUpdateProfile';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 toast.configure()
 
@@ -33,6 +34,8 @@ const CustomerProfile = () => {
                 setphone(res.data.Cus.phone)
                 setemail(res.data.Cus.email)
                 setPassowrd(res.data.Cus.pwd)
+                setShow(res.data.Cus.show)
+                setLoading(false)
             
                  }).catch((error) => {
                     console.log(error.message)
@@ -80,6 +83,14 @@ const CustomerProfile = () => {
     })
   }
  }  
+
+
+if (loading) {
+  return <div className="d-flex justify-content-center" 
+    style={{ paddingTop: 400 }}>
+  <CircularProgress hidden={false} />
+   </div>
+   }
 
 return (
   <div class="bod" style={{background:"#E3E4FA"}}  >

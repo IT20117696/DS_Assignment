@@ -197,7 +197,6 @@ export default class AddCardDetails extends Component {
 
             <div align="right"><br/>
                <Button
-                  // onClick={this.onSubmit}
                   type="submit"
                   style={{ color:"white", background:"#08368b"}}
                   variant="outlined"
@@ -207,7 +206,7 @@ export default class AddCardDetails extends Component {
               </Button> &nbsp;&nbsp; &nbsp;&nbsp;
               
               <Button
-                  href='/'
+                  href='/dashboard'
                   style={{ color:"white", background:"#A70D2A" }}
                   variant="outlined"
                   startIcon={<CancelIcon />}

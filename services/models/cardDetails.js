@@ -17,6 +17,7 @@ const addCardDetailsSchema = new mongoose.Schema({
     },
 
     cvv:{
+        maxlength: 3,
         type:Number,
         required:true,
     },

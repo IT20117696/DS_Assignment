@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Footer from './footer';
+import UpdateUserProfile from './AdminUpdate';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 toast.configure()
 
@@ -12,7 +14,6 @@ const AdminProfile = () => {
     const [phone, setphone] = useState("");
     const [email, setemail] = useState("");
     const [pwd, setPassowrd] = useState("");
-
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(true)
 
@@ -32,6 +33,8 @@ const AdminProfile = () => {
                 setphone(res.data.Adm.phone)
                 setemail(res.data.Adm.email)
                 setPassowrd(res.data.Adm.pwd)
+                setShow(res.data.Adm.show)
+                setLoading(false)
             
                  }).catch((error) => {
                     console.log(error.message)
@@ -42,6 +45,11 @@ const AdminProfile = () => {
           }
           getUserData()
    }, [])
+
+//update admin details
+ const updateUserProfile = () => {
+  setShow(true)
+}
 
 
 //logout user profile
@@ -76,9 +84,18 @@ const AdminProfile = () => {
   }
  }  
 
+if (loading) {
+   return <div className="d-flex justify-content-center" 
+     style={{ paddingTop: 400 }}>
+   <CircularProgress hidden={false} />
+    </div>
+    }
+
+
+
 return (
   <div class="bod" style={{background:"#E3E4FA"}}  >
-    <MovieMainNavBar/>
+    <AdminNavBar/>
       <br/><br/> <br/><br/> <br/><br/>
        <div class="container">
         <div class="main-bod" >
@@ -128,8 +145,10 @@ return (
                       <div class="row">
                   <div class="col-sm-12"><br/>
               <center>
-      <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-        <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button></center>
+        <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
+        <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button>&nbsp;&nbsp;&nbsp;
+        <button style={{background: "#FFA500", color:"black"}} onClick={updateUserProfile} class="btn btn " target="__blank">Edit Profile</button></center>
+         
             </div>
                </div><br/><br/><br/><br/><br/><br/><br/>
                   </div>
@@ -137,7 +156,14 @@ return (
                         </div>
                            </div>
                                </div>
-              </div>
+    <UpdateUserProfile
+     upadminName= {adminName}
+     upphone= {phone}
+     upemail= {email}
+     show={show}
+     onHide={() => setShow(false)}
+         />
+              </div><br/><br/>
           <Footer/>
       </div>
     )

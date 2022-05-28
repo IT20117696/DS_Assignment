@@ -19,7 +19,7 @@ import CustomerUpdateProfile from './components/CustomerUpdateProfile';
 import AdminProfile from './components/AdminProfile';
 import SmsSend from './components/SmsSend';
 
-// import AdminUpdateProfile from './components/AdminUpdateProfile';
+import AdminUpdateProfile from './components/AdminUpdate';
 
 function App(){
     return (
@@ -28,7 +28,6 @@ function App(){
                 
                 <Route path="/" component={MovieHomePage} exact/>
                
-
                 <div>
                 <Route path= "/dashboard" component={MovieDisplay} exact/>
                 <Route path= "/customer/signin" component={CustomerLogin}/>
@@ -45,7 +44,7 @@ function App(){
                 <Route path = "/customer/profile" component={CustomerProfile}/>
                 <Route path = "/customer/update" component={CustomerUpdateProfile}/>
                 <Route path = "/admin/profile" component={AdminProfile}/>
-                {/* <Route path = "/admin/update" component={AdminUpdateProfile}/> */}
+                <Route path = "/admin/update" component={AdminUpdateProfile}/>
            
                 <Route path = "/SmsSend" component={SmsSend}/>
 
