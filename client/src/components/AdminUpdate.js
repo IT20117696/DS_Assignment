@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import SendIcon from '@material-ui/icons/Send';
 import {toast} from 'react-toastify';
 
-const UpdateSliitProfile = ({
+const UpdateUserProfile = ({
     upadminName,
     upphone,
     upemail,
@@ -88,4 +88,4 @@ const UpdateSliitProfile = ({
     );
 };
 
-export default UpdateSliitProfile;
+export default UpdateUserProfile;

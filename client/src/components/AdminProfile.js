@@ -4,7 +4,7 @@ import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Footer from './footer';
-import UpdateSliitProfile from './AdminUpdate';
+import UpdateUserProfile from './AdminUpdate';
 
 toast.configure()
 
@@ -13,7 +13,6 @@ const AdminProfile = () => {
     const [phone, setphone] = useState("");
     const [email, setemail] = useState("");
     const [pwd, setPassowrd] = useState("");
-
     const [show, setShow] = useState(false)
     const [loading, setLoading] = useState(true)
 
@@ -145,7 +144,7 @@ return (
                         </div>
                            </div>
                                </div>
-    <UpdateSliitProfile
+    <UpdateUserProfile
      upadminName= {adminName}
      upphone= {phone}
      upemail= {email}
