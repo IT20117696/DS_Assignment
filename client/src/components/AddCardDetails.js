@@ -197,7 +197,6 @@ export default class AddCardDetails extends Component {
 
             <div align="right"><br/>
                <Button
-                  // onClick={this.onSubmit}
                   type="submit"
                   style={{ color:"white", background:"#08368b"}}
                   variant="outlined"
