@@ -26,7 +26,6 @@ function App(){
                 
                 <Route path="/" component={MovieHomePage} exact/>
                
-
                 <div>
                 <Route path= "/dashboard" component={MovieDisplay} exact/>
                 <Route path= "/customer/signin" component={CustomerLogin}/>

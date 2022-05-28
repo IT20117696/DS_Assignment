@@ -7,8 +7,6 @@ import Footer from './footer';
 import UpdateUserProfile from './AdminUpdate';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-
-
 toast.configure()
 
 const AdminProfile = () => {

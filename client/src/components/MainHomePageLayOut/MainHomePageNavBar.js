@@ -24,7 +24,7 @@ export default class MovieMainNavBar extends Component {
         </li> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
 
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Upcomming Movie</a>
+          <a class="nav-link" aria-current="page" href="#" style={{color: "#ffff"}}>Up-Coming Movies</a>
         </li>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  
 
         <li class="nav-item">
