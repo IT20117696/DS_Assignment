@@ -17,7 +17,7 @@ import DisplayBookings from './components/DisplayBookings';
 import CustomerProfile from './components/CustomerProfile';
 import CustomerUpdateProfile from './components/CustomerUpdateProfile';
 import AdminProfile from './components/AdminProfile';
-// import AdminUpdateProfile from './components/AdminUpdateProfile';
+import AdminUpdateProfile from './components/AdminUpdate';
 
 function App(){
     return (
@@ -43,7 +43,7 @@ function App(){
                 <Route path = "/customer/profile" component={CustomerProfile}/>
                 <Route path = "/customer/update" component={CustomerUpdateProfile}/>
                 <Route path = "/admin/profile" component={AdminProfile}/>
-                {/* <Route path = "/admin/update" component={AdminUpdateProfile}/> */}
+                <Route path = "/admin/update" component={AdminUpdateProfile}/>
            
                 </div> 
             </Switch>

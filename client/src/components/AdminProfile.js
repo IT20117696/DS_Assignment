@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import MovieMainNavBar from './DashBoardLayOut/MovieMainNavBar';
+import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Footer from './footer';
+import UpdateSliitProfile from './AdminUpdate';
 
 toast.configure()
 
@@ -43,6 +44,11 @@ const AdminProfile = () => {
           getUserData()
    }, [])
 
+//update admin details
+ const updateUserProfile = () => {
+  setShow(true)
+}
+
 
 //logout user profile
   const adminLogout = () => {
@@ -78,7 +84,7 @@ const AdminProfile = () => {
 
 return (
   <div class="bod" style={{background:"#E3E4FA"}}  >
-    <MovieMainNavBar/>
+    <AdminNavBar/>
       <br/><br/> <br/><br/> <br/><br/>
        <div class="container">
         <div class="main-bod" >
@@ -128,8 +134,10 @@ return (
                       <div class="row">
                   <div class="col-sm-12"><br/>
               <center>
-      <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
-        <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button></center>
+        <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
+        <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button>&nbsp;&nbsp;&nbsp;
+        <button style={{background: "#FFA500", color:"#ffff"}} onClick={updateUserProfile} class="btn btn " target="__blank">Edit Profile</button></center>
+         
             </div>
                </div><br/><br/><br/><br/><br/><br/><br/>
                   </div>
@@ -137,6 +145,13 @@ return (
                         </div>
                            </div>
                                </div>
+    <UpdateSliitProfile
+     upadminName= {adminName}
+     upphone= {phone}
+     upemail= {email}
+     show={show}
+     onHide={() => setShow(false)}
+         />
               </div>
           <Footer/>
       </div>
