@@ -49,9 +49,9 @@ const UpdateUserProfile = ({
       <div >
       <Modal  show={show} onHide={onHide} animation={true} size="lg"
       aria-labelledby="contained-modal-title-vcenter" centered>
-          <div style={{background: "#272E48"}}>
+          <div style={{background: "#E6E6FA"}}>
         <Modal.Header closeButton> 
-          <Modal.Title style={{color: "white"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
+          <Modal.Title style={{color: "black"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
         </Modal.Header>
         <Modal.Body >
           <form onSubmit={updateAdminProfile} className="text-color" >  
@@ -76,10 +76,10 @@ const UpdateUserProfile = ({
               </div>
             </div>
 
-            <br/> <br/>
+            <br/>
  
-            <center><Button variant="contained" style={{background: "#749ee3",color:"white", width: 50+"%"}} className="w-10" 
-            startIcon={<SendIcon />} disableElevation type="submit">Update my details</Button></center>
+            <center><Button variant="contained" style={{background: "#151B54",color:"white", width: 30+"%"}} className="w-10" 
+            startIcon={<SendIcon />} disableElevation type="submit">Update Details</Button></center> <br/>
           </form>
         </Modal.Body>
         </div>

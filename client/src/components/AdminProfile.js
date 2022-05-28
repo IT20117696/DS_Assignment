@@ -5,6 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Footer from './footer';
 import UpdateUserProfile from './AdminUpdate';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
+
 
 toast.configure()
 
@@ -32,6 +35,8 @@ const AdminProfile = () => {
                 setphone(res.data.Adm.phone)
                 setemail(res.data.Adm.email)
                 setPassowrd(res.data.Adm.pwd)
+                setShow(res.data.Adm.show)
+                setLoading(false)
             
                  }).catch((error) => {
                     console.log(error.message)
@@ -80,6 +85,15 @@ const AdminProfile = () => {
     })
   }
  }  
+
+if (loading) {
+   return <div className="d-flex justify-content-center" 
+     style={{ paddingTop: 400 }}>
+   <CircularProgress hidden={false} />
+    </div>
+    }
+
+
 
 return (
   <div class="bod" style={{background:"#E3E4FA"}}  >
@@ -135,7 +149,7 @@ return (
               <center>
         <button style={{background: "#151B54", color:"#ffff"}} onClick={adminLogout} class="btn btn " target="__blank">Log Out</button>&nbsp;&nbsp;&nbsp;
         <button style={{background: "#9F000F", color:"#ffff"}} onClick={deleteAccount} class="btn btn " target="__blank">Delete</button>&nbsp;&nbsp;&nbsp;
-        <button style={{background: "#FFA500", color:"#ffff"}} onClick={updateUserProfile} class="btn btn " target="__blank">Edit Profile</button></center>
+        <button style={{background: "#FFA500", color:"black"}} onClick={updateUserProfile} class="btn btn " target="__blank">Edit Profile</button></center>
          
             </div>
                </div><br/><br/><br/><br/><br/><br/><br/>
@@ -151,7 +165,7 @@ return (
      show={show}
      onHide={() => setShow(false)}
          />
-              </div>
+              </div><br/><br/>
           <Footer/>
       </div>
     )
