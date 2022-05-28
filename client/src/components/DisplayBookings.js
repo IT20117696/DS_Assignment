@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AdminNavBar from './DashBoardLayOut/AdminNavBar';
-import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default class DisplayBookings extends Component {
   constructor(props){
@@ -56,7 +57,7 @@ handleSearchArea = (e)=>{
           <div className="col-md-3" >
             <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} />
                </div><br/>
-               <h3 align="center">All Movie Booking Details</h3>
+               <h3 align="center"><b><u>All Movie Booking Details</u></b></h3>
                                <br></br>
          <table class = "table" >
               <thead>
@@ -68,7 +69,7 @@ handleSearchArea = (e)=>{
                       <th scope='col'>Booking Date</th>
                       <th scope='col'>No of Ticket</th>
                       <th scope='col'>Amount</th>
-                      <th scope='col'>send sms to client</th>
+                      <th scope='col'>Send Message</th>
                   </tr>
               </thead>
               <tbody>
@@ -82,10 +83,14 @@ handleSearchArea = (e)=>{
                           <td>{bookmovie.noOfTickects}</td>
                           <td>{bookmovie.amount}</td>
                           <td> 
-                            <Link to="/SmsSend">
-                            <button className='btn btn-primary' >Pay Now</button>
-
-                            </Link>
+               <Button
+                  href='/SmsSend'
+                  style={{ color:"white", background:"#08368b" }}
+                  variant="outlined"
+                  startIcon={<CheckCircleIcon />}
+                >
+                 Confirm
+              </Button>      
                             </td>
                           </tr>
         ))}
