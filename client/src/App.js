@@ -17,6 +17,8 @@ import DisplayBookings from './components/DisplayBookings';
 import CustomerProfile from './components/CustomerProfile';
 import CustomerUpdateProfile from './components/CustomerUpdateProfile';
 import AdminProfile from './components/AdminProfile';
+import SmsSend from './components/SmsSend';
+
 import AdminUpdateProfile from './components/AdminUpdate';
 
 function App(){
@@ -44,6 +46,8 @@ function App(){
                 <Route path = "/admin/profile" component={AdminProfile}/>
                 <Route path = "/admin/update" component={AdminUpdateProfile}/>
            
+                <Route path = "/SmsSend" component={SmsSend}/>
+
                 </div> 
             </Switch>
         </BrowserRouter>

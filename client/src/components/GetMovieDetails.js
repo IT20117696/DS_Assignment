@@ -62,6 +62,8 @@ onDelete = (movieID)=>{
                          <a><b>ADD MOVIES</b></a>
                             <br/><br/><br/>
                                </div>
+                               <h3 align="center">All Movie Details</h3>
+                               <br></br>
                 <table class = "table" >
               <thead>
                   <tr bgcolor="#BCC6CC">

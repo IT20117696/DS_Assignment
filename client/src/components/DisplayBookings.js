@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AdminNavBar from './DashBoardLayOut/AdminNavBar';
-
+import { Link } from "react-router-dom";
 
 export default class DisplayBookings extends Component {
   constructor(props){
@@ -56,7 +56,8 @@ handleSearchArea = (e)=>{
           <div className="col-md-3" >
             <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} />
                </div><br/>
-
+               <h3 align="center">All Movie Booking Details</h3>
+                               <br></br>
          <table class = "table" >
               <thead>
                   <tr bgcolor="#BCC6CC">
@@ -67,6 +68,7 @@ handleSearchArea = (e)=>{
                       <th scope='col'>Booking Date</th>
                       <th scope='col'>No of Ticket</th>
                       <th scope='col'>Amount</th>
+                      <th scope='col'>send sms to client</th>
                   </tr>
               </thead>
               <tbody>
@@ -79,6 +81,12 @@ handleSearchArea = (e)=>{
                           <td>{bookmovie.bookingDate}</td>
                           <td>{bookmovie.noOfTickects}</td>
                           <td>{bookmovie.amount}</td>
+                          <td> 
+                            <Link to="/SmsSend">
+                            <button className='btn btn-primary' >Pay Now</button>
+
+                            </Link>
+                            </td>
                           </tr>
         ))}
           </tbody>
