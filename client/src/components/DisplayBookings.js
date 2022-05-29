@@ -82,8 +82,8 @@ handleSearchArea = (e)=>{
                           <td>{bookmovie.timeSlot}</td>
                           <td>{bookmovie.bookingDate}</td>
                           <td>{bookmovie.noOfTickects}</td>
-                          <td>{bookmovie.email}</td>
                           <td>{bookmovie.amount}</td>
+                          <td>{bookmovie.email}</td>
                           <td> 
                <Button
                   href='/SmsSend'
