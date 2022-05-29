@@ -18,7 +18,7 @@ var debug = true,
     var client = new ShoutoutClient(apiKey, debug, verifySSL);
     var message = {
       content: { sms: "Hello Your Resevation is  Successfull..!" },
-      destinations: ["94715607361"],
+      destinations: ["*********"], //receiver phonenumber
       source: "ShoutDEMO",
       transports: ["SMS"],
     };
