@@ -49,7 +49,7 @@ export default class MovieHomePage extends Component {
           
           </div>
 
-     
+    
           <Footer/>
       </div>
     )
