@@ -23,7 +23,8 @@ export default class AddCardDetails extends Component {
       id:"",
       movieName:"",
       theater:"",
-      date:""
+      date:"",
+      sendemail:""
     }
   }
 
@@ -50,6 +51,7 @@ export default class AddCardDetails extends Component {
   }
 
   getUserDetails(){
+    try{
     const config = {
       headers:{
         Authorization:localStorage.getItem("Authorization")
@@ -60,14 +62,17 @@ export default class AddCardDetails extends Component {
     if(res.data.success){
       this.setState({
         email:res.data.Customer.email,
-        name:res.data.Customer.customerName,
+        name:res.data.Customer.customerName 
       })
     }
-    console.log(this.state)
+    // console.log(this.state)
     })
+  }catch(error){
+    console.log(error.message)
+  }
   }
 
-  sendData = (e)=>{
+  onSubmit = (e)=>{
        e.preventDefault();
        const{cardMethod,cardNumber,cardHolderName,cvv,expirationMonth,expirationYear ,totalAmount} = this.state;
        const data = {
@@ -82,6 +87,7 @@ export default class AddCardDetails extends Component {
 
     console.log(data);
     axios.post("http://localhost:8070/api/carddetails/add",data).then((res)=>{
+    
     if(res.data.success){
         this.setState({
           cardMethod:"",
@@ -92,12 +98,18 @@ export default class AddCardDetails extends Component {
           expirationYear:"",
           totalAmount:"",
 
-        });
+        })
+        console.log("payment success")
+        this.sendemail();
       }
+    }).catch((error)=>{
+      console.log(error)
     })
-    const data2 ={
+  }
+    sendemail(){
+      const data2 = {
       reciverMail:this.state.email, 
-      senderMail:"jayasinghesajani98@gmail.com",
+      senderMail:"mgmmoviereservation@gmail.com",
       reciverName:this.state.name, 
       reservationid:this.state.id,
       movieName:this.state.movieName,
@@ -107,8 +119,7 @@ export default class AddCardDetails extends Component {
     axios.post("http://localhost:8070/api/moviepayment/sendemail",data2).then((res)=>{
       if(res.status){
         alert("Thank you. Your Payment is successfull.Pleade check your email!!")
-      }else{
-        alert("Error")
+        window.location = "/dashboard"
       }
     })
 
@@ -122,7 +133,7 @@ export default class AddCardDetails extends Component {
               <div className="card shadow mb-8 w-50" style={{background: "#FFFFFF"}}>
                  <div className="card-header py-3">
                    <div class="card-header" style={{background: "#E3E4FA"}}><h2>Add Card Details</h2></div><br/>
-                      <form className="row g-2" > 
+                      <form className="row g-2"onSubmit={this.onSubmit} > 
                          <label style={{marginBottom:'5px',fontSize: 20, color: "#737CA1"}} className="form-label"><b> Your Total Amount : {this.state.amount}</b> </label>
  
                     <div className="col-md-6" align="left">
@@ -137,7 +148,7 @@ export default class AddCardDetails extends Component {
         
                               <div className="col-md-6" align="left">
                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Card Number</span>
-                     <input type="number" className="form-control" name="cardNumber" placeholder="0000-0000-0000-0000"
+                     <input type="number" className="form-control" name="cardNumber" placeholder="0000 0000 0000 0000" maxLength={16} minLength={16} 
                  value={this.state.cardNumber } onChange={this.handleInputChange} required/><br/>
             </div>
 
@@ -149,7 +160,7 @@ export default class AddCardDetails extends Component {
 
                         <div className="col-md-6" align="left">
                            <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> CVV</span>
-                               <input type="passowrd" className="form-control" name="cvv" placeholder="000" 
+                               <input type="tel" className="form-control" name="cvv" placeholder="000" maxLength={3} minLength={3} 
                                    value={this.state.cvv }  onChange={this.handleInputChange}required /><br/>
                                      </div>
 
@@ -224,5 +235,3 @@ export default class AddCardDetails extends Component {
     )
   }
 }
-
-

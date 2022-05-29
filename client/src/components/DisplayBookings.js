@@ -55,7 +55,7 @@ handleSearchArea = (e)=>{
             <br/><br/>
 
           <div className="col-md-3" >
-            <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} />
+            <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} placeholder="Search Movie Name ,Theater or Booking Date"/>
                </div><br/>
                <h3 align="center"><b><u>All Movie Booking Details</u></b></h3>
                                <br></br>

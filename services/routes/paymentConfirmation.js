@@ -15,8 +15,8 @@ router.post('/moviepayment/sendemail',(req,res)=>{
  var mailTransporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-              user: 'jayasinghesajani98@gmail.com',
-              pass: '*******'
+              user: 'mgmmoviereservation@gmail.com',
+              pass: 'mgmmovie@123'
             }
         });       
    

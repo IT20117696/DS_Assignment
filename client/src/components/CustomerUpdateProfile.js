@@ -16,7 +16,7 @@ const UpdateProfile = ({
 
     const [customerName, setcustomerName] = useState(upcustomerName);
     const [phone, setphone] = useState(upphone);
-    const [email, setemail] = useState(upemail);
+    const [email, setEmail] = useState(upemail);
 
     const updateUserProfile = async (e) => {
         e.preventDefault()
@@ -29,7 +29,7 @@ const UpdateProfile = ({
       const updateObject = {
             customerName :customerName,
             phone:phone,
-            email:email
+            email: email
       }
 
       await axios.put('http://localhost:8070/api/customer/update', updateObject, config)
@@ -72,8 +72,8 @@ return(
 
                       <div className="form-group">
                   <small className="text-muted">Chnage Your Email</small>
-              <input type="email" required className="form-control" Value={email}
-           onChange={(e) => setemail(e.target.value)} />
+              <input type="email" className="form-control"  Value={email}
+            onChange={(e) => setEmail(e.target.value)} required/>
         </div>
 
             <br/> <br/>
