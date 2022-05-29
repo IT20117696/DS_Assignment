@@ -126,7 +126,7 @@ handleInputChange = (e)=>{
 
                             <div className="col-md-6" align="left">
                        <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Email</span>
-                    <input type="text" className="form-control" name="email" placeholder="Select Booking Date" Required = "required"
+                    <input type="text" className="form-control" name="email" placeholder="Enter Email" Required = "required"
                         value={this.state.email} onChange={this.handleInputChange} />
                            </div>
 
