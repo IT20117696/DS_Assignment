@@ -91,15 +91,13 @@ handleSearchArea = (e)=>{
                 >
                  Confirm
               </Button>      
-                            </td>
-                          </tr>
+            </td>
+         </tr>
         ))}
-          </tbody>
-        </table>
-
-         </div>
-      </div>
-   
+     </tbody>
+  </table>
+     </div>
+       </div>
     )
   }
 }

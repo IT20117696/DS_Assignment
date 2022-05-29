@@ -27,15 +27,13 @@ export default function AdminRegisteration(){
    if(pwd1==pwd2){
     axios.post("http://localhost:8070/api/admin/signup",newAdmin )
       .then(()=>{
-      //  alert("Registeration Success!!");
       toast.success('Registration Success',{position:toast.POSITION.TOP_CENTER});
       window.location = "/admin/signin"
-    }).catch((err)=>{
-      //   alert(err)
+  
+   }).catch((err)=>{
       toast.warning('Admin account already exists. Please check your Email.',{position:toast.POSITION.TOP_CENTER});
             })
         }else{
-            // alert("Password Dismatch");
             toast.warning('Password dismatch',{position:toast.POSITION.TOP_CENTER});
         }  
         setadminName("");
@@ -44,6 +42,7 @@ export default function AdminRegisteration(){
         setPassowrd1("");
         setPassowrd2("");
     }
+
     return (
         <div style={{ backgroundColor:"#2B3856" }} >
           <MainHomePageNavBar/><br/><br/>

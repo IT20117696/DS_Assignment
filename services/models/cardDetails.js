@@ -7,6 +7,7 @@ const addCardDetailsSchema = new mongoose.Schema({
     },
 
     cardNumber:{
+        maxlength: 16,
         type:Number,
         required:true,
     },

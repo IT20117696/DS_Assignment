@@ -117,10 +117,10 @@ handleInputChange = (e)=>{
                             <div className="col-md-6" align="left">
                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> No Of Tickects</span>
                      <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
-                        value={this.state.noOfTickects } 
-                        onChange={this.handleInputChange} />
-                         <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
-                             </div><br/>
+                         value={this.state.noOfTickects } 
+                           onChange={this.handleInputChange} />
+                              <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
+                                </div><br/>
 
                                  <div align="right"><br/>
                                       <Button
