@@ -93,28 +93,27 @@ handleSearchArea = (e)=>{
                   variant="outlined"
                   startIcon={<CheckCircleIcon />}
                 >
-                 Send SMS
+                  SMS
               </Button>      
-               
-                            </td>
-                            <td><Button
+               </td>
+             
+              <td>
+                <Button
                   href='/EmailSend'
                   style={{ color:"black", background:"#F58200" }}
                   variant="outlined"
                   startIcon={<MarkEmailReadIcon />}
                 >
-                 Send Email
-              </Button>     </td>
-                          </tr>
-
-            </td>
-         </tr>
-
+                  Email
+                </Button>    
+               </td>
+           </tr>
         ))}
-     </tbody>
-  </table>
-     </div>
-       </div>
+
+       </tbody>
+     </table>
+  </div>
+</div>
     )
   }
 }
