@@ -74,17 +74,18 @@ export default class AdminLogin extends Component {
                            USER EMAIL ADDRESS </span>
                                <input type="text" name="email" placeholder='Enter Your Email' class="form-control "
                                     onChange={e=>this.setState({email:e.target.value})} required/>
-                                       </div>
-                                           </div>
+                                   </div>
+                                 </div>
    
-                            <div class="form-outline mb-4" >
-                         <div className="col-md-9">
+                           <div class="form-outline mb-4" >
+                        <div className="col-md-9">
                      <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> <i className="fa fa-key"> &nbsp;&nbsp;</i>    
-                  PASSWORD</span>
+                   PASSWORD</span>
               <input type="password" name="password" class="form-control " placeholder="Enter Your Password" 
             onChange={e=>this.setState({pwd:e.target.value})} required/> 
          </div>
       </div>   
+  
    <Button 
        type="submit" class="btn btn-primary">
            <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>

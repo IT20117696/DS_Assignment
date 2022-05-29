@@ -47,12 +47,12 @@ const UpdateUserProfile = ({
 
     return (
       <div >
-      <Modal  show={show} onHide={onHide} animation={true} size="lg"
-      aria-labelledby="contained-modal-title-vcenter" centered>
-          <div style={{background: "#E6E6FA"}}>
-        <Modal.Header closeButton> 
-          <Modal.Title style={{color: "black"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
-        </Modal.Header>
+         <Modal  show={show} onHide={onHide} animation={true} size="lg"
+            aria-labelledby="contained-modal-title-vcenter" centered>
+              <div style={{background: "#E6E6FA"}}>
+                <Modal.Header closeButton> 
+              <Modal.Title style={{color: "black"}} id="contained-modal-title-vcenter" className="text-color" >Update My Details</Modal.Title>
+           </Modal.Header>
         <Modal.Body >
           <form onSubmit={updateAdminProfile} className="text-color" >  
             <div className="form-group row mb-3">

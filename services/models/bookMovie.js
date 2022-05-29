@@ -26,6 +26,11 @@ const bookmovieSchema = new mongoose.Schema({
         required:true,
     },
 
+    email:{
+        type:String,
+        required:true,
+    },
+    
     phonenumber:{type:String,    default:'94766952510'},
     
     movieName:{

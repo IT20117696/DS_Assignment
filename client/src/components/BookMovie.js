@@ -17,6 +17,7 @@ export default class BookMovie extends Component {
             bookingDate:"",
             noOfTickects:"",
             amount:"", 
+            email:"",
             bookmovie:{}       
    }
 }
@@ -44,7 +45,7 @@ handleInputChange = (e)=>{
 
  onSubmit = (e)=>{
     e.preventDefault();
-    const{movieName,theater,timeSlot,bookingDate,noOfTickects} = this.state;
+    const{movieName,theater,timeSlot,bookingDate,noOfTickects,email} = this.state;
     const amount = 700 * this.state.noOfTickects;
     const data = {
         movieName: this.state.movie.movieName,
@@ -52,7 +53,8 @@ handleInputChange = (e)=>{
         timeSlot:timeSlot,
         bookingDate:bookingDate,
         noOfTickects:noOfTickects,
-        amount:amount
+        amount:amount,
+        email:email
     }
     console.log(data);
     if(data){
@@ -118,9 +120,15 @@ handleInputChange = (e)=>{
                          <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> No Of Tickects</span>
                      <input type="number" className="form-control" name="noOfTickects" placeholder="Enter No Of Tickets" Required = "required" 
                         value={this.state.noOfTickects } 
-                        onChange={this.handleInputChange} />
-                         <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
-                             </div><br/>
+                          onChange={this.handleInputChange} />
+                             <span id="passwordHelpInline" class="form-text"> Tickect Price : Rs.700.00 </span>
+                                 </div>
+
+                            <div className="col-md-6" align="left">
+                       <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}>Email</span>
+                    <input type="text" className="form-control" name="email" placeholder="Select Booking Date" Required = "required"
+                        value={this.state.email} onChange={this.handleInputChange} />
+                           </div>
 
                                  <div align="right"><br/>
                                       <Button

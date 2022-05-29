@@ -159,7 +159,7 @@ return (
                 onHide={() => setShow(false)} 
                 upcustomerName= {customerName}
                 upphone = {phone}
-                upemail = {email}
+                upemail= {email}
                 uppwd= {pwd}           
               />
               </div>

@@ -85,15 +85,15 @@ export default class CustomerLogin extends Component {
             onChange={e=>this.setState({pwd:e.target.value})} required/> 
          </div>
       </div>   
-                  <Button 
-                     type="submit" class="btn btn-primary">
-                     <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i></Button>
-     
-                <div class="divider d-flex align-items-center my-4">
-                     <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> 
-                        <center><label >Not Registered? &nbsp;&nbsp;</label>
-                            <a href='/customer/signup'>Sign Up</a></center>
-                               </span>
+      <Button 
+         type="submit" class="btn btn-primary">
+            <i className="fa fa-check-circle"> &nbsp;&nbsp;  Sign in &nbsp;&nbsp;</i>
+               </Button>
+                  <div class="divider d-flex align-items-center my-4">
+                      <span id="passwordHelpInline" class="form-text" style={{marginBottom:'2px'}}> 
+                          <center><label >Not Registered? &nbsp;&nbsp;</label>
+                             <a href='/customer/signup'>Sign Up</a></center>
+                                </span>
                                    </div>             
                                 </form>   
                               </div> 
