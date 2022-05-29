@@ -55,7 +55,7 @@ handleSearchArea = (e)=>{
             <br/><br/>
 
           <div className="col-md-3" >
-            <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} placeholder="Search Movie Name ,Theater or Booking Date"/>
+            <input type="text" className="form-control" style={{marginBottom:'2px'}} onChange={this.handleSearchArea} placeholder="Search Theater or Booking Date"/>
                </div><br/>
                <h3 align="center"><b><u>All Movie Booking Details</u></b></h3>
                                <br></br>
@@ -69,6 +69,7 @@ handleSearchArea = (e)=>{
                       <th scope='col'>Booking Date</th>
                       <th scope='col'>No of Ticket</th>
                       <th scope='col'>Amount</th>
+                      <th scope='col'>Email</th>
                       <th scope='col'>Send Message</th>
                   </tr>
               </thead>
@@ -81,6 +82,7 @@ handleSearchArea = (e)=>{
                           <td>{bookmovie.timeSlot}</td>
                           <td>{bookmovie.bookingDate}</td>
                           <td>{bookmovie.noOfTickects}</td>
+                          <td>{bookmovie.email}</td>
                           <td>{bookmovie.amount}</td>
                           <td> 
                <Button
