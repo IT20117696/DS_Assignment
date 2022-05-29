@@ -39,7 +39,7 @@ import Footer from './footer';
                 type="text"
                 onChange={(f) => setphonenumber(f.target.value)}
                 className="form-control"
-                value={94766952510}
+                value={0000000000} //phone number
                 placeholder="phonenumber"
               />
            </div>

@@ -16,7 +16,7 @@ router.post('/moviepayment/sendemail',(req,res)=>{
             service: 'gmail',
             auth: {
               user: 'mgmmoviereservation@gmail.com',
-              pass: 'mgmmovie@123'
+              pass: '********'  //password
             }
         });       
    

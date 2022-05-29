@@ -120,7 +120,7 @@ export default class AddCardDetails extends Component {
   
     axios.post("http://localhost:8070/api/moviepayment/sendemail",data2).then((res)=>{
      if(res.status){
-        alert("Thank you. Your Payment is successfull.Pleade check your email!!")
+        alert("Thank you. Your Payment is Pending.Pleade check your email!!")
         window.location = "/dashboard"
       }
     })
