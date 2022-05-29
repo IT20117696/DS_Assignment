@@ -3,6 +3,7 @@ import axios from 'axios';
 import AdminNavBar from './DashBoardLayOut/AdminNavBar';
 import Button from "@material-ui/core/Button";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import MarkEmailReadIcon from '@mui/icons-material/MarkEmailRead';
 
 export default class DisplayBookings extends Component {
   constructor(props){
@@ -70,6 +71,7 @@ handleSearchArea = (e)=>{
                       <th scope='col'>No of Ticket</th>
                       <th scope='col'>Amount</th>
                       <th scope='col'>Send Message</th>
+                      <th scope='col'>Send Email</th>
                   </tr>
               </thead>
               <tbody>
@@ -89,9 +91,18 @@ handleSearchArea = (e)=>{
                   variant="outlined"
                   startIcon={<CheckCircleIcon />}
                 >
-                 Confirm
+                 Send SMS
               </Button>      
+               
                             </td>
+                            <td><Button
+                  href='/EmailSend'
+                  style={{ color:"black", background:"#F58200" }}
+                  variant="outlined"
+                  startIcon={<MarkEmailReadIcon />}
+                >
+                 Send Email
+              </Button>     </td>
                           </tr>
         ))}
           </tbody>

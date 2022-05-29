@@ -98,6 +98,7 @@ onDelete = (movieID)=>{
                           </IconButton>
                           </td>
                           </tr>
+              
         ))}
           </tbody>
         </table>
