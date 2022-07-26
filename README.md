@@ -23,6 +23,7 @@ Following are the technologies that have been used when developing the above web
 •	Card Details Repository
 •	Admin Repository
 •	Movie Repository
+
 Service interfaces: 
 •	Cart Service 
 •	Movie Service
